@@ -235,6 +235,7 @@ header {
     display: inline-block;
     height: 100%;
     width: 100%;
+    max-width: 17rem;
     text-decoration: none;
     text-emphasis: none;
     transition: all 250ms ease-in-out;
@@ -247,6 +248,14 @@ header {
     /* behaviour for hoverable devices */
     .project-url:hover {
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+}
+
+@media only screen and (min-width: 414px) {
+    /* large mobiles */
+
+    .project-url {
+        max-width: none;
     }
 }
 
@@ -281,7 +290,7 @@ header {
 }
 
 .project-description {
-    padding: 1rem 2rem;
+    padding: .85rem;
     background-color: var(--card-bg);
     border-radius: 0px 10px 10px 0px;
 }
@@ -289,11 +298,13 @@ header {
 .project-description h2 {
     color: var(--text-gray-dark);
     padding: .5rem 0;
+    font-size: 1.1rem;
 }
 
 .project-description p {
     color: var(--text-gray);
     padding: .5rem 0;
+    font-size: .95rem;
 }
 
 @media only screen and (min-width: 768px) {
@@ -323,9 +334,18 @@ header {
     }
 
     .project-description {
+        padding: 1rem 2rem;
         grid-column: span 3;
         grid-auto-flow: column;
         border-radius: 0px 10px 10px 0px;
+    }
+
+    .project-description h2 {
+        font-size: 1.5rem;
+    }
+
+    .project-description p {
+        font-size: 1rem;
     }
 }
 
