@@ -360,3 +360,67 @@ header {
         margin-top: 1.85rem;
     }
 }
+
+/* Footer */
+footer{
+    padding: 1rem;
+    margin-top: 3rem;
+}
+
+.footer-wrapper{
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+footer span{
+    color: var(--text-gray);
+}
+
+footer a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+}
+
+.github-svg{
+    height: 1rem;
+    width: 1rem;
+    fill: black;
+}
+
+@media only screen and (min-width: 768px) {
+    /* for tablet */
+
+    footer{
+        margin-top: 5rem;
+        padding: 2rem 3rem;
+    }
+    
+    .footer-wrapper{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .github-svg{
+        height: 1.45rem;
+        width: 1.45rem;
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+    /* for desktop */
+
+    footer{
+        margin-top: 8rem;
+        padding: 2rem 5rem;
+    }
+
+    .github-svg{
+        height: 1.95rem;
+        width: 1.95rem;
+    }
+}
