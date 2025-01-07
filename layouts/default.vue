@@ -8,9 +8,7 @@
   </main>
 
   <!-- Footer -->
-  <footer>
-    <slot name="footer">Default Footer</slot>
-  </footer>
+  <PageFooter />
 </template>
 
 <!-- Import your global CSS file -->
