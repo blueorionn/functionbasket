@@ -8,18 +8,18 @@
         <h3 class="pb-1 md:pb-2 lg:pb-3 xl:pb-4 text-gray-300">
           Welcome everyone!
         </h3>
-        <p class="lg:py-1 text-gray-400">
+        <p class="md:py-1 lg:py-2 leading-7 text-gray-400">
           I'm Swadhin an indie developer, progammer and technology enthusiast.
         </p>
-        <p class="lg:py-1 text-gray-400">
+        <p class="md:py-1 lg:py-2 leading-7 text-gray-400">
           I love to learn new frameworks, languages and building websites.
         </p>
-        <p class="lg:py-1 text-gray-400">
+        <p class="md:py-1 lg:py-2 leading-7 text-gray-400">
           When I'm not working on a client project, I'm working on my own
           projects. This website is a curated collection of my work and my hobby
           projects that are hosted on functionbasket domain.
         </p>
-        <p class="lg:py-1 text-gray-400">
+        <p class="md:py-1 lg:py-2 leading-7 text-gray-400">
           Welcome to my project showcase! As an indie full-stack developer, I’ve
           poured creativity and passion into a diverse range of projects, from
           dynamic web apps to innovative tools. This website is a curated
