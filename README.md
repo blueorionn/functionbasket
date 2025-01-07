@@ -1,75 +1,10 @@
-# Nuxt Minimal Starter
+# Functionbasket
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Welcome to my project showcase! As an indie full-stack developer, I’ve poured creativity and
+passion into a diverse range of projects, from dynamic web apps to innovative tools. This
+website is a curated collection of my work, designed to share my journey, highlight my
+expertise, and inspire others. Explore and discover the stories behind each project!
 
-## Setup
+## website url
 
-Make sure to install dependencies:
-
-```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+[https://functionbasket.com](http://www.functionbasket.com)
