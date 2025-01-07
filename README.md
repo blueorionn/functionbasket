@@ -8,3 +8,7 @@ expertise, and inspire others. Explore and discover the stories behind each proj
 ## website url
 
 [https://functionbasket.com](http://www.functionbasket.com)
+
+## License
+
+This project is licensed under [CC BY-NC-SA 4.0](https://github.com/blueorionn/functionbasket/blob/main/LICENSE) License.
