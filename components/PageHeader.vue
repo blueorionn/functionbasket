@@ -3,18 +3,22 @@
     <div
       class="max-w-screen-2xl mx-auto py-2 flex items-center justify-between"
     >
-      <div></div>
+      <NuxtLink to="/" class="h-max w-max">
+        <span class="_header-font text-xl text-gray-200">fb</span>
+      </NuxtLink>
       <nav class="flex justify-center items-center gap-2 md:gap-4">
         <NuxtLink to="/about">
-          <span class="transition-all hover:text-gray-200"
+          <span class="font-semibold transition-all hover:text-gray-200"
             >About</span
           ></NuxtLink
         >
         <NuxtLink to="/blog">
-          <span class="transition-all hover:text-gray-200">Blog</span></NuxtLink
+          <span class="font-semibold transition-all hover:text-gray-200"
+            >Blog</span
+          ></NuxtLink
         >
         <NuxtLink to="/projects">
-          <span class="transition-all hover:text-gray-200"
+          <span class="font-semibold transition-all hover:text-gray-200"
             >Projects</span
           ></NuxtLink
         >
@@ -63,5 +67,11 @@
 <style scoped>
 nav {
   font-family: Roboto, sans-serif;
+}
+._header-font {
+  font-family: "Playwrite IS", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
 </style>
