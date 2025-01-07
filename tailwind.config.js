@@ -2,9 +2,9 @@
 export default {
   content: [
     // all directories and extensions will correspond to your Nuxt config
-    "{srcDir}/components/**/*.{vue,js,jsx,mjs,ts,tsx}",
-    "{srcDir}/layouts/**/*.{vue,js,jsx,mjs,ts,tsx}",
-    "{srcDir}/pages/**/*.{vue,js,jsx,mjs,ts,tsx}",
+    "functionbasket/components/**/*.{vue,js,jsx,mjs,ts,tsx}",
+    "functionbasket/layouts/**/*.{vue,js,jsx,mjs,ts,tsx}",
+    "functionbasket/pages/**/*.{vue,js,jsx,mjs,ts,tsx}",
   ],
   theme: {
     extend: {
