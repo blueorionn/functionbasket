@@ -1,8 +1,6 @@
 <template>
   <!-- Header -->
-  <header>
-    <slot name="header">Default Header</slot>
-  </header>
+  <PageHeader />
 
   <!-- Main Content -->
   <main>
