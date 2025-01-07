@@ -6,20 +6,50 @@
       </NuxtLink>
       <nav class="flex justify-center items-center gap-2 md:gap-4">
         <NuxtLink to="/about">
-          <span class="font-semibold transition-all hover:text-gray-200"
+          <span
+            class="hidden lg:inline-block font-semibold transition-all hover:text-gray-200"
             >About</span
-          ></NuxtLink
-        >
+          >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 -960 960 960"
+            class="lg:hidden h-4 w-4 fill-gray-400 transition-all hover:fill-gray-500"
+          >
+            <path
+              d="M480-400q33 0 56.5-23.5T560-480q0-33-23.5-56.5T480-560q-33 0-56.5 23.5T400-480q0 33 23.5 56.5T480-400ZM320-240h320v-23q0-24-13-44t-36-30q-26-11-53.5-17t-57.5-6q-30 0-57.5 6T369-337q-23 10-36 30t-13 44v23ZM720-80H240q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80Zm0-80v-446L526-800H240v640h480Zm-480 0v-640 640Z"
+            />
+          </svg>
+        </NuxtLink>
         <NuxtLink to="/blog">
-          <span class="font-semibold transition-all hover:text-gray-200"
+          <span
+            class="hidden lg:inline-block font-semibold transition-all hover:text-gray-200"
             >Blog</span
-          ></NuxtLink
-        >
+          >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 -960 960 960"
+            class="lg:hidden h-4 w-4 fill-gray-400 transition-all hover:fill-gray-500"
+          >
+            <path
+              d="M280-280h280v-80H280v80Zm0-160h400v-80H280v80Zm0-160h400v-80H280v80Zm-80 480q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z"
+            />
+          </svg>
+        </NuxtLink>
         <NuxtLink to="/projects">
-          <span class="font-semibold transition-all hover:text-gray-200"
+          <span
+            class="hidden lg:inline-block font-semibold transition-all hover:text-gray-200"
             >Projects</span
-          ></NuxtLink
-        >
+          >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 -960 960 960"
+            class="lg:hidden h-4 w-4 fill-gray-400 transition-all hover:fill-gray-500"
+          >
+            <path
+              d="M480-80q-33 0-56.5-23.5T400-160h160q0 33-23.5 56.5T480-80ZM320-200v-80h320v80H320Zm10-120q-69-41-109.5-110T180-580q0-125 87.5-212.5T480-880q125 0 212.5 87.5T780-580q0 81-40.5 150T630-320H330Zm24-80h252q45-32 69.5-79T700-580q0-92-64-156t-156-64q-92 0-156 64t-64 156q0 54 24.5 101t69.5 79Zm126 0Z"
+            />
+          </svg>
+        </NuxtLink>
         <div class="h-4 w-0.5 bg-gray-500">
           <span class="sr-only">Divider</span>
         </div>
