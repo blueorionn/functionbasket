@@ -1,6 +1,6 @@
 <template>
   <footer class="w-full bg-black">
-    <section class="w-full max-w-screen-md mx-auto py-4">
+    <section class="w-full max-w-screen-md mx-auto p-4">
       <NuxtLink
         src="https://creativecommons.org/licenses/by-nc-sa/4.0/"
         target="_blank"

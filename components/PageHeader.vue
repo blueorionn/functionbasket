@@ -1,8 +1,6 @@
 <template>
   <header class="w-full py-4 bg-black text-gray-400">
-    <div
-      class="max-w-screen-2xl mx-auto py-2 flex items-center justify-between"
-    >
+    <div class="max-w-screen-2xl mx-auto p-4 flex items-center justify-between">
       <NuxtLink to="/" class="h-max w-max">
         <span class="_header-font text-xl text-gray-200">fb</span>
       </NuxtLink>
@@ -32,7 +30,7 @@
         >
           <span class="sr-only">Github Repo url</span>
           <svg
-            class="fill-gray-500 dark:fill-gray-400 h-3 w-3 md:h-4 md:w-4 lg:h-5 lg:w-5 hover:fill-gray-800 dark:hover:fill-gray-200 transition-all"
+            class="fill-gray-500 dark:fill-gray-400 h-4 w-4 lg:h-5 lg:w-5 hover:fill-gray-800 dark:hover:fill-gray-200 transition-all"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 100 100"
           >
@@ -50,7 +48,7 @@
         >
           <span class="sr-only">Twitter Profile</span>
           <svg
-            class="fill-gray-500 dark:fill-gray-400 h-3 w-3 md:h-4 md:w-4 hover:fill-gray-800 dark:hover:fill-gray-200 transition-all"
+            class="fill-gray-500 dark:fill-gray-400 h-4 w-4 hover:fill-gray-800 dark:hover:fill-gray-200 transition-all"
             viewBox="0 0 1200 1227"
             xmlns="http://www.w3.org/2000/svg"
           >
