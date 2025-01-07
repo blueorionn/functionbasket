@@ -40,6 +40,7 @@
           >
             <NuxtImg
               src="https://crypticworld.functionbasket.com/static/logos/crypticworld-logo.png"
+              alt="Cryptic world logo"
               class="saturate-0 h-12 w-12 transition-all group-hover:saturate-50"
             />
             <div>
@@ -60,6 +61,7 @@
           >
             <NuxtImg
               src="https://photogallery.functionbasket.com/icons/site-icon.png"
+              alt="Photogallery logo"
               class="saturate-0 h-12 w-12 transition-all group-hover:saturate-50"
             />
             <div>
