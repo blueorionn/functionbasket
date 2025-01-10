@@ -5,7 +5,7 @@
         <span class="_header-font text-xl text-gray-200">fb</span>
       </NuxtLink>
       <nav class="flex justify-center items-center gap-2 md:gap-4">
-        <NuxtLink to="/about">
+        <NuxtLink to="/about" title="About">
           <span
             class="hidden lg:inline-block font-semibold transition-all hover:text-gray-200"
             >About</span
@@ -20,7 +20,7 @@
             />
           </svg>
         </NuxtLink>
-        <NuxtLink to="/blog">
+        <NuxtLink to="/blog" title="Blog">
           <span
             class="hidden lg:inline-block font-semibold transition-all hover:text-gray-200"
             >Blog</span
@@ -35,7 +35,7 @@
             />
           </svg>
         </NuxtLink>
-        <NuxtLink to="/projects">
+        <NuxtLink to="/projects" title="Projects">
           <span
             class="hidden lg:inline-block font-semibold transition-all hover:text-gray-200"
             >Projects</span
