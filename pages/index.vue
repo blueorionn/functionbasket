@@ -1,25 +1,41 @@
 <template>
   <div class="w-full min-h-[100vh] py-8 lg:py-12 xl:py-24 bg-black">
     <section class="max-w-screen-md mx-auto px-4">
-      <h1 class="text-xl md:text-2xl lg:text-3xl font-bold text-gray-100">
+      <h1
+        class="text-xl md:text-2xl lg:text-3xl font-bold text-gray-100 opacity-0 _animation"
+      >
         Function Basket
       </h1>
       <div class="py-4 md:py-6 lg:py-8">
-        <h3 class="pb-1 md:pb-2 lg:pb-3 xl:pb-4 text-gray-300">
+        <h3
+          class="pb-1 md:pb-2 lg:pb-3 xl:pb-4 text-gray-300 opacity-0 _animation"
+        >
           Welcome everyone!
         </h3>
-        <p class="md:py-1 lg:py-2 leading-7 text-gray-400">
+        <p
+          class="md:py-1 lg:py-2 leading-7 text-gray-400 opacity-0 _animation"
+          style="animation-delay: 250ms"
+        >
           I'm Swadhin an indie developer, progammer and technology enthusiast.
         </p>
-        <p class="md:py-1 lg:py-2 leading-7 text-gray-400">
+        <p
+          class="md:py-1 lg:py-2 leading-7 text-gray-400 opacity-0 _animation"
+          style="animation-delay: 500ms"
+        >
           I love to learn new frameworks, languages and building websites.
         </p>
-        <p class="md:py-1 lg:py-2 leading-7 text-gray-400">
+        <p
+          class="md:py-1 lg:py-2 leading-7 text-gray-400 opacity-0 _animation"
+          style="animation-delay: 750ms"
+        >
           When I'm not working on a client project, I'm working on my own
           projects. This website is a curated collection of my work and my hobby
           projects that are hosted on functionbasket domain.
         </p>
-        <p class="md:py-1 lg:py-2 leading-7 text-gray-400">
+        <p
+          class="md:py-1 lg:py-2 leading-7 text-gray-400 opacity-0 _animation"
+          style="animation-delay: 1000ms"
+        >
           Welcome to my project showcase! As an indie full-stack developer, I’ve
           poured creativity and passion into a diverse range of projects, from
           dynamic web apps to innovative tools. This website is a curated
@@ -28,7 +44,10 @@
           each project!
         </p>
       </div>
-      <div class="py-4 md:py-6 xl:py-8">
+      <div
+        class="py-4 md:py-6 xl:py-8 opacity-0 _animation"
+        style="animation-delay: 1250ms"
+      >
         <h2 class="text-gray-300">Pinned projects</h2>
         <div
           class="w-full my-4 md:my-6 lg:my-8 grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-2 md:gap-4 lg:gap-6"
@@ -78,7 +97,10 @@
           </NuxtLink>
         </div>
       </div>
-      <div class="py-4 md:py-6 xl:py-8">
+      <div
+        class="py-4 md:py-6 xl:py-8 opacity-0 _animation"
+        style="animation-delay: 1500ms"
+      >
         <h2 class="text-gray-300">Find me across web</h2>
         <div class="py-2 md:py-4 w-full flex gap-2 md:gap-4">
           <NuxtLink
@@ -141,3 +163,22 @@ useHead({
   ],
 });
 </script>
+
+<style scoped>
+@keyframes fadeInFrame {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+._animation {
+  animation-name: fadeInFrame;
+  animation-duration: 2.5s;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+}
+</style>
