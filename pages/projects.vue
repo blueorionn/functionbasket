@@ -50,9 +50,7 @@
           </div>
         </div>
         <div class="rounded-lg">
-          <div
-            class="rounded-lg relative my-2 md:my-4 p-4 lg:p-6 bg-emerald-300"
-          >
+          <div class="rounded-lg relative my-2 md:my-4 p-4 lg:p-6 bg-gray-600">
             <NuxtImg
               src="https://crypticworld.functionbasket.com/static/img/crypticworld-site-img.png"
               alt="Crypticworld Home page Image."
