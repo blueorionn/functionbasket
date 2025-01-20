@@ -5,21 +5,6 @@
         <span class="_header-font text-xl text-gray-200">fb</span>
       </NuxtLink>
       <nav class="flex justify-center items-center gap-2 md:gap-4">
-        <NuxtLink to="/blog" title="Blog">
-          <span
-            class="hidden lg:inline-block font-semibold transition-all hover:text-gray-200"
-            >Blog</span
-          >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 -960 960 960"
-            class="lg:hidden h-4 w-4 fill-gray-400 transition-all hover:fill-gray-500"
-          >
-            <path
-              d="M280-280h280v-80H280v80Zm0-160h400v-80H280v80Zm0-160h400v-80H280v80Zm-80 480q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z"
-            />
-          </svg>
-        </NuxtLink>
         <NuxtLink to="/projects" title="Projects">
           <span
             class="hidden lg:inline-block font-semibold transition-all hover:text-gray-200"
