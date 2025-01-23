@@ -55,7 +55,7 @@
           <NuxtLink
             href="https://crypticworld.functionbasket.com/"
             target="_blank"
-            class="group flex justify-between items-center gap-2 md:gap-4"
+            class="group flex justify-left items-center gap-4 md:gap-6"
           >
             <NuxtImg
               src="https://crypticworld.functionbasket.com/static/logos/crypticworld-logo.png"
@@ -76,7 +76,7 @@
           <NuxtLink
             href="https://photogallery.functionbasket.com/"
             target="_blank"
-            class="group flex justify-between items-center gap-2 md:gap-4"
+            class="group flex justify-left items-center gap-4 md:gap-6"
           >
             <NuxtImg
               src="https://photogallery.functionbasket.com/icons/site-icon.png"
