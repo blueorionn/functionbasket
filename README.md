@@ -1,75 +1,19 @@
-# Nuxt Minimal Starter
+# FUNCTIONBASKET
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+![Logo](https://www.functionbasket.com/favicon.ico)
 
-## Setup
+## ABOUT
 
-Make sure to install dependencies:
+This website is a personal toolkit designed to streamline various tasks for ethical hacking, networking, and general utility. It hosts a collection of tools I frequently use.
 
-```bash
-# npm
-npm install
+Built for efficiency and accessibility, this platform consolidates these utilities into a single, easy-to-use interface. Whether I need quick data conversions, network analysis, or simple encoding/decoding operations, this site serves as my go-to resource.
 
-# pnpm
-pnpm install
+⚠ Disclaimer: This website is for personal use only. It is not meant for illegal activities or public distribution.
 
-# yarn
-yarn install
+## LICENSE
 
-# bun
-bun install
-```
+This project is released under the MIT License. Feel free to modify and experiment with it!
 
-## Development Server
+## Author
 
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+[@blueorionn](https://www.github.com/blueorionn)
