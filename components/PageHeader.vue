@@ -40,7 +40,7 @@
             <span class="sr-only">Github Icon</span>
             <Icon
               name="logos:github-icon"
-              style="height: 1.2rem; width: 1.2rem; aspect-ratio: auto;"
+              style="height: 1.2rem; width: 1.2rem; aspect-ratio: auto"
             />
           </NuxtLink>
           <NuxtLink

@@ -8,7 +8,7 @@
   </main>
 
   <!-- Footer -->
-   <PageFooter />
+  <PageFooter />
 </template>
 
 <!-- Import your global CSS file -->
