@@ -64,7 +64,7 @@
                 height: 1.25rem;
                 width: 1.25rem;
                 aspect-ratio: auto;
-                color: pink;
+                color: hotpink;
               "
             />
             <span class="text-base text-gray-800">Sponsor</span>
