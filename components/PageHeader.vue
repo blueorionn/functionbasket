@@ -17,7 +17,7 @@
       </NuxtLink>
       <div class="hidden lg:flex justify-center items-center gap-4">
         <nav class="w-max flex gap-2.5 justify-center items-center">
-          <NuxtLink href="#tools" class="group relative py-0.5">
+          <NuxtLink href="/#tools" class="group relative py-0.5">
             <span class="text-base font-normal text-gray-800">Tools</span>
             <span
               class="absolute bottom-0 left-0 w-full h-0.5 group-hover:bg-gray-300 transition-all duration-200"
