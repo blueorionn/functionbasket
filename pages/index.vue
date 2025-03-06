@@ -74,6 +74,28 @@
           </NuxtLink>
         </div>
       </section>
+      <section class="py-6" id="tools" aria-label="tools-section">
+        <h1
+          class="text-lg xl:text-xl font-semibold text-gray-700 cursor-default"
+        >
+          TOOLS
+        </h1>
+        <section
+          class="py-4 grid grid-flow-row md:grid-flow-col md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8"
+        >
+          <div v-for="tool in tools" :key="tool.id" class="h-full w-full">
+            <HomeToolsCard
+              :title="tool.title"
+              :description="tool.description"
+              :tool-url="tool.location"
+            />
+          </div>
+        </section>
+      </section>
     </section>
   </main>
 </template>
+
+<script setup>
+import tools from "~/data/tools.json";
+</script>
