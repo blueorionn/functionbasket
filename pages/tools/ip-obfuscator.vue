@@ -241,9 +241,7 @@ function checkValidity(ip: string) {
   hasError.value = false;
 
   // valid ipv4 has 4 octets
-  if (ip.split(".").length !== 4) {
-    hasError.value = true;
-  }
+  hasError.value = (ip.split(".").length === 4);
 
   // checking range of octet
   const octets = ip.split(".");
