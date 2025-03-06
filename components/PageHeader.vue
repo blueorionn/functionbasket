@@ -78,7 +78,7 @@
   </header>
 </template>
 
-<style>
+<style scoped>
 nav {
   font-family: Robot, sans-serif;
 }

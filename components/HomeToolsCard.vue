@@ -14,7 +14,7 @@
   </NuxtLink>
 </template>
 
-<style>
+<style scoped>
 .home-tools-card-title {
   font-family: "Space Grotesk", sans-serif;
 }
