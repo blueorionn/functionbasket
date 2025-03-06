@@ -3,12 +3,12 @@
     "id": 1,
     "title": "IP obfuscator",
     "description": "An IP obfuscator is a tool used to mask, hide, or manipulate an IP address to make it difficult to trace the original source. It is commonly used in cybersecurity, privacy protection, and ethical hacking to anonymize network activity.",
-    "location": "/tool/ip-obfuscator"
+    "location": "/tools/ip-obfuscator"
   },
   {
     "id": 2,
     "title": "Encoder Decoder",
     "description": "This tool is used for encoding, decoding, and transforming data in various formats like Base64, URL encoding, Hex, and hashes. It helps analyze obfuscated data, craft attack payloads, reverse encoded strings. It simplifies tasks like bypassing filters, testing web security mechanisms, and analyzing captured traffic.",
-    "location": "/tool/encoder-decoder"
+    "location": "/tools/encoder-decoder"
   }
 ]
