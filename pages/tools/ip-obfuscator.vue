@@ -226,37 +226,140 @@ const hasError = ref(false);
 const ipv6_short = ref("::ffff:7f00:0001");
 const ipv6_long = ref("0000:0000:0000:0000:0000:ffff:7f00:0001");
 const ip_int = ref("2130706433");
-const ip_hex = ref("0XC0.0X2.0X2.0X8");
+const ip_hex = ref("7F.00.00.01");
 const ip_oct = ref("0177.0000.0000.0001");
-const ip_bin = ref("11000000000000100000001000001000");
-const ip_dot_bin = ref("11000000.00000010.00000010.00001000");
+const ip_bin = ref("01111111000000000000000000000001");
+const ip_dot_bin = ref("01111111.00000000.00000000.00000001");
 
 function convert() {
-  checkValidity(text.value);
+  // Check validity of IPv4 address
+  hasError.value = !isIPv4AddressValid(text.value);
+
+  if (!hasError.value) {
+    ip_int.value = convertToInt(text.value);
+    ip_hex.value = convertToHex(text.value);
+    ip_oct.value = convertToOct(text.value);
+    ip_bin.value = convertToBin(text.value);
+    ip_dot_bin.value = convertToDottedBin(text.value);
+    ipv6_short.value = `::FFFF:${convertToIPv6(text.value)}`;
+    ipv6_long.value = `0000:0000:0000:0000:0000::FFFF:${convertToIPv6(text.value)}`;
+  }
 }
 
-// Check ipv4 validity
-function checkValidity(ip: string) {
-  // reseting hasError variable
-  hasError.value = false;
+function isIPv4AddressValid(ip: string) {
+  // An IPv4 address has 4 octets
+  if (ip.split(".").length !== 4) return false;
 
-  // valid ipv4 has 4 octets
-  hasError.value = (ip.split(".").length === 4);
+  // Each octet should be in range 0-255
+  for (let index = 0; index < ip.split(".").length; index++) {
+    const octet = ip.split(".")[index];
+    if (isNaN(parseInt(octet))) return false;
+    if (parseInt(octet) > 255 || parseInt(octet) < 0) return false;
+  }
 
-  // checking range of octet
+  return true;
+}
+
+function convertToIPv6(ip: string) {
   const octets = ip.split(".");
-  octets.forEach((octet) => {
-    try {
-      const intOctet = parseInt(octet);
 
-      if (intOctet < 255 || intOctet > 0) {
-        hasError.value = false;
-      } else {
-        hasError.value = true;
-      }
-    } catch (error) {
-      hasError.value = true;
-    }
-  });
+  const hex_octets = octets.reduce(
+    (previousValue: string, currentValue: string, currentIndex: number) => {
+      const ox = parseInt(currentValue);
+
+      if (currentIndex === 0)
+        return `${zeroPad(ox.toString(16))}`.toUpperCase();
+      return `${previousValue}.${zeroPad(ox.toString(16)).toUpperCase()}`;
+    },
+    ""
+  );
+  const hex_code = hex_octets.split(".");
+
+  return `${hex_code[0]}${hex_code[1]}:${hex_code[2]}${hex_code[3]}`;
+}
+
+function convertToInt(ip: string) {
+  const octets = ip.split(".").reverse();
+  const ip_int = octets.reduce(
+    (previousValue: string, currentValue: string, currentIndex: number) => {
+      const ox = parseInt(currentValue) * 256 ** currentIndex;
+      if (isNaN(parseInt(previousValue))) return `${ox}`;
+      return `${parseInt(previousValue) + ox}`;
+    },
+    ""
+  );
+
+  return ip_int;
+}
+
+function convertToHex(ip: string) {
+  const octets = ip.split(".");
+
+  const ip_hex = octets.reduce(
+    (previousValue: string, currentValue: string, currentIndex: number) => {
+      const ox = parseInt(currentValue);
+
+      if (currentIndex === 0)
+        return `${zeroPad(ox.toString(16))}`.toUpperCase();
+      return `${previousValue}.${zeroPad(ox.toString(16)).toUpperCase()}`;
+    },
+    ""
+  );
+
+  return ip_hex;
+}
+
+function convertToOct(ip: string) {
+  const octets = ip.split(".");
+
+  const ip_oct = octets.reduce(
+    (previousValue: string, currentValue: string, currentIndex: number) => {
+      const ox = parseInt(currentValue);
+
+      if (currentIndex === 0)
+        return `${zeroPad(ox.toString(8), 4)}`.toUpperCase();
+      return `${previousValue}.${zeroPad(ox.toString(8), 4).toUpperCase()}`;
+    },
+    ""
+  );
+
+  return ip_oct;
+}
+
+function convertToBin(ip: string) {
+  const octets = ip.split(".");
+
+  const ip_bin = octets.reduce(
+    (previousValue: string, currentValue: string, currentIndex: number) => {
+      const ox = parseInt(currentValue);
+
+      if (currentIndex === 0) return `${zeroPad(ox.toString(2), 8)}`;
+      return `${previousValue}${zeroPad(ox.toString(2), 8)}`;
+    },
+    ""
+  );
+
+  return ip_bin;
+}
+
+function convertToDottedBin(ip: string) {
+  const octets = ip.split(".");
+
+  const ip_dot_bin = octets.reduce(
+    (previousValue: string, currentValue: string, currentIndex: number) => {
+      const ox = parseInt(currentValue);
+
+      if (currentIndex === 0) return `${zeroPad(ox.toString(2), 8)}`;
+      return `${previousValue}.${zeroPad(ox.toString(2), 8)}`;
+    },
+    ""
+  );
+
+  return ip_dot_bin;
+}
+
+// utility function
+function zeroPad(num: number | string, places = 2) {
+  return String(num).padStart(places, "0");
 }
 </script>
