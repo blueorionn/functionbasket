@@ -10,6 +10,11 @@ Built for efficiency and accessibility, this platform consolidates these utiliti
 
 ⚠ Disclaimer: This website is for personal use only. It is not meant for illegal activities or public distribution.
 
+## Requirements
+
+- node (^20.19.0)
+- npm (^9.5.0)
+
 ## LICENSE
 
 This project is released under the MIT License. Feel free to modify and experiment with it!
