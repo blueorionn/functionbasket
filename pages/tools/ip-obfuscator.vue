@@ -42,152 +42,48 @@
         <div
           class="w-full mt-8 px-0 md:p-4 lg:p-8 grid grid-flow-row lg:grid-cols-2 gap-4 lg:gap-8"
         >
-          <div>
-            <h2 class="py-0.5 text-base font-semibold text-gray-700">
-              IPv6 (short)
-            </h2>
-            <div
-              class="relative w-full p-4 border rounded-sm bg-white border-gray-200"
-            >
-              <span class="text-gray-700">{{ ipv6_short }}</span>
-              <button type="button" class="absolute right-[5%] my-auto">
-                <span class="sr-only">Copy Button</span>
-                <Icon
-                  name="ic:baseline-content-copy"
-                  style="
-                    height: 1.25rem;
-                    width: 1.25rem;
-                    aspect-ratio: auto;
-                    color: #a9a9a9;
-                  "
-                />
-              </button>
-            </div>
-          </div>
-          <div>
-            <h2 class="py-0.5 text-base font-semibold text-gray-700">
-              IPv6 (long)
-            </h2>
-            <div
-              class="relative w-full p-4 border rounded-sm bg-white border-gray-200"
-            >
-              <span class="text-gray-700">{{ ipv6_long }}</span>
-              <button type="button" class="absolute right-[5%] my-auto">
-                <span class="sr-only">Copy Button</span>
-                <Icon
-                  name="ic:baseline-content-copy"
-                  style="
-                    height: 1.25rem;
-                    width: 1.25rem;
-                    aspect-ratio: auto;
-                    color: #a9a9a9;
-                  "
-                />
-              </button>
-            </div>
-          </div>
-          <div>
-            <h2 class="py-0.5 text-base font-semibold text-gray-700">
-              Integer
-            </h2>
-            <div
-              class="relative w-full p-4 border rounded-sm bg-white border-gray-200"
-            >
-              <span class="text-gray-700">{{ ip_int }}</span>
-              <button type="button" class="absolute right-[5%] my-auto">
-                <span class="sr-only">Copy Button</span>
-                <Icon
-                  name="ic:baseline-content-copy"
-                  style="
-                    height: 1.25rem;
-                    width: 1.25rem;
-                    aspect-ratio: auto;
-                    color: #a9a9a9;
-                  "
-                />
-              </button>
-            </div>
-          </div>
-          <div>
-            <h2 class="py-0.5 text-base font-semibold text-gray-700">Hex</h2>
-            <div
-              class="relative w-full p-4 border rounded-sm bg-white border-gray-200"
-            >
-              <span class="text-gray-700">{{ ip_hex }}</span>
-              <button type="button" class="absolute right-[5%] my-auto">
-                <span class="sr-only">Copy Button</span>
-                <Icon
-                  name="ic:baseline-content-copy"
-                  style="
-                    height: 1.25rem;
-                    width: 1.25rem;
-                    aspect-ratio: auto;
-                    color: #a9a9a9;
-                  "
-                />
-              </button>
-            </div>
-          </div>
-          <div>
-            <h2 class="py-0.5 text-base font-semibold text-gray-700">Octal</h2>
-            <div
-              class="relative w-full p-4 border rounded-sm bg-white border-gray-200"
-            >
-              <span class="text-gray-700">{{ ip_oct }}</span>
-              <button type="button" class="absolute right-[5%] my-auto">
-                <span class="sr-only">Copy Button</span>
-                <Icon
-                  name="ic:baseline-content-copy"
-                  style="
-                    height: 1.25rem;
-                    width: 1.25rem;
-                    aspect-ratio: auto;
-                    color: #a9a9a9;
-                  "
-                />
-              </button>
-            </div>
-          </div>
-          <div>
-            <h2 class="py-0.5 text-base font-semibold text-gray-700">Binary</h2>
-            <div
-              class="relative w-full p-4 border rounded-sm bg-white border-gray-200"
-            >
-              <span class="text-gray-700">{{ ip_bin }}</span>
-              <button type="button" class="absolute right-[5%] my-auto">
-                <span class="sr-only">Copy Button</span>
-                <Icon
-                  name="ic:baseline-content-copy"
-                  style="
-                    height: 1.25rem;
-                    width: 1.25rem;
-                    aspect-ratio: auto;
-                    color: #a9a9a9;
-                  "
-                />
-              </button>
-            </div>
-          </div>
-          <div>
-            <h2 class="py-0.5 text-base font-semibold text-gray-700">
-              Dotted Binary
-            </h2>
-            <div
-              class="relative w-full p-4 border rounded-sm bg-white border-gray-200"
-            >
-              <span class="text-gray-700">{{ ip_dot_bin }}</span>
-              <button type="button" class="absolute right-[5%] my-auto">
-                <span class="sr-only">Copy Button</span>
-                <Icon
-                  name="ic:baseline-content-copy"
-                  style="
-                    height: 1.25rem;
-                    width: 1.25rem;
-                    aspect-ratio: auto;
-                    color: #a9a9a9;
-                  "
-                />
-              </button>
+          <div
+            v-for="[key, ipFormat] in Object.entries(ipFormats)"
+            :key="ipFormat.index"
+          >
+            <div class="h-max w-full">
+              <h2 class="py-0.5 text-base font-semibold text-gray-700">
+                {{ ipFormat.title }}
+              </h2>
+              <div
+                class="relative w-full flex justify-center items-center p-4 border rounded-sm bg-white border-gray-200"
+              >
+                <span class="text-gray-700 flex-grow">{{
+                  ipFormat.value
+                }}</span>
+                <button
+                  type="button"
+                  title="copy"
+                  @click="copyfn(ipFormat.index)"
+                >
+                  <span class="sr-only">Copy Button</span>
+                  <Icon
+                    name="ic:baseline-content-copy"
+                    style="
+                      height: 1rem;
+                      width: 1rem;
+                      aspect-ratio: auto;
+                      color: #a9a9a9;
+                    "
+                    v-if="!ipFormat.onCopyState"
+                  />
+                  <Icon
+                    name="ic:baseline-check"
+                    style="
+                      height: 1rem;
+                      width: 1rem;
+                      aspect-ratio: auto;
+                      color: #a9a9a9;
+                    "
+                    v-if="ipFormat.onCopyState"
+                  />
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -203,6 +99,8 @@
 </style>
 
 <script setup lang="ts">
+import { copyToClipboard } from "#imports";
+
 useSeoMeta({
   title: "IP obfuscator - Function Basket",
   description:
@@ -223,143 +121,190 @@ const text = ref("");
 const hasError = ref(false);
 
 // Conversion formats
-const ipv6_short = ref("::ffff:7f00:0001");
-const ipv6_long = ref("0000:0000:0000:0000:0000:ffff:7f00:0001");
-const ip_int = ref("2130706433");
-const ip_hex = ref("7F.00.00.01");
-const ip_oct = ref("0177.0000.0000.0001");
-const ip_bin = ref("01111111000000000000000000000001");
-const ip_dot_bin = ref("01111111.00000000.00000000.00000001");
+const ipFormats = ref({
+  ipv6Short: {
+    index: 0,
+    title: "IPv6 (short)",
+    value: "::ffff:7f00:0001",
+    onCopyState: false,
+  },
+  ipv6Long: {
+    index: 1,
+    title: "IPv6 (long)",
+    value: "0000:0000:0000:0000:0000:ffff:7f00:0001",
+    onCopyState: false,
+  },
+  ipInt: {
+    index: 2,
+    title: "Integer",
+    value: "2130706433",
+    onCopyState: false,
+  },
+  ipHex: { index: 3, title: "Hex", value: "7F.00.00.01", onCopyState: false },
+  ipOct: {
+    index: 4,
+    title: "Octal",
+    value: "0177.0000.0000.0001",
+    onCopyState: false,
+  },
+  ipBin: {
+    index: 5,
+    title: "Binary",
+    value: "01111111000000000000000000000001",
+    onCopyState: false,
+  },
+  ipDotBin: {
+    index: 6,
+    title: "Dotted Binary",
+    value: "01111111.00000000.00000000.00000001",
+    onCopyState: false,
+  },
+});
 
 function convert() {
   // Check validity of IPv4 address
   hasError.value = !isIPv4AddressValid(text.value);
 
   if (!hasError.value) {
-    ip_int.value = convertToInt(text.value);
-    ip_hex.value = convertToHex(text.value);
-    ip_oct.value = convertToOct(text.value);
-    ip_bin.value = convertToBin(text.value);
-    ip_dot_bin.value = convertToDottedBin(text.value);
-    ipv6_short.value = `::FFFF:${convertToIPv6(text.value)}`;
-    ipv6_long.value = `0000:0000:0000:0000:0000::FFFF:${convertToIPv6(text.value)}`;
-  }
-}
-
-function isIPv4AddressValid(ip: string) {
-  // An IPv4 address has 4 octets
-  if (ip.split(".").length !== 4) return false;
-
-  // Each octet should be in range 0-255
-  for (let index = 0; index < ip.split(".").length; index++) {
-    const octet = ip.split(".")[index];
-    if (isNaN(parseInt(octet))) return false;
-    if (parseInt(octet) > 255 || parseInt(octet) < 0) return false;
+    ipFormats.value.ipInt.value = convertToInt(text.value);
+    ipFormats.value.ipHex.value = convertToHex(text.value);
+    ipFormats.value.ipOct.value = convertToOct(text.value);
+    ipFormats.value.ipBin.value = convertToBin(text.value);
+    ipFormats.value.ipDotBin.value = convertToDottedBin(text.value);
+    ipFormats.value.ipv6Short.value = `::FFFF:${convertToIPv6(text.value)}`;
+    ipFormats.value.ipv6Long.value = `0000:0000:0000:0000:0000::FFFF:${convertToIPv6(text.value)}`;
   }
 
-  return true;
-}
+  function isIPv4AddressValid(ip: string) {
+    // An IPv4 address has 4 octets
+    if (ip.split(".").length !== 4) return false;
 
-function convertToIPv6(ip: string) {
-  const octets = ip.split(".");
+    // Each octet should be in range 0-255
+    for (let index = 0; index < ip.split(".").length; index++) {
+      const octet = ip.split(".")[index];
+      if (isNaN(parseInt(octet))) return false;
+      if (parseInt(octet) > 255 || parseInt(octet) < 0) return false;
+    }
 
-  const hex_octets = octets.reduce(
-    (previousValue: string, currentValue: string, currentIndex: number) => {
-      const ox = parseInt(currentValue);
+    return true;
+  }
 
-      if (currentIndex === 0)
-        return `${zeroPad(ox.toString(16))}`.toUpperCase();
-      return `${previousValue}.${zeroPad(ox.toString(16)).toUpperCase()}`;
-    },
-    ""
-  );
-  const hex_code = hex_octets.split(".");
+  function convertToIPv6(ip: string) {
+    const octets = ip.split(".");
 
-  return `${hex_code[0]}${hex_code[1]}:${hex_code[2]}${hex_code[3]}`;
-}
+    const hex_octets = octets.reduce(
+      (previousValue: string, currentValue: string, currentIndex: number) => {
+        const ox = parseInt(currentValue);
 
-function convertToInt(ip: string) {
-  const octets = ip.split(".").reverse();
-  const ip_int = octets.reduce(
-    (previousValue: string, currentValue: string, currentIndex: number) => {
-      const ox = parseInt(currentValue) * 256 ** currentIndex;
-      if (isNaN(parseInt(previousValue))) return `${ox}`;
-      return `${parseInt(previousValue) + ox}`;
-    },
-    ""
-  );
+        if (currentIndex === 0)
+          return `${zeroPad(ox.toString(16))}`.toUpperCase();
+        return `${previousValue}.${zeroPad(ox.toString(16)).toUpperCase()}`;
+      },
+      ""
+    );
+    const hex_code = hex_octets.split(".");
 
-  return ip_int;
-}
+    return `${hex_code[0]}${hex_code[1]}:${hex_code[2]}${hex_code[3]}`;
+  }
 
-function convertToHex(ip: string) {
-  const octets = ip.split(".");
+  function convertToInt(ip: string) {
+    const octets = ip.split(".").reverse();
+    const ip_int = octets.reduce(
+      (previousValue: string, currentValue: string, currentIndex: number) => {
+        const ox = parseInt(currentValue) * 256 ** currentIndex;
+        if (isNaN(parseInt(previousValue))) return `${ox}`;
+        return `${parseInt(previousValue) + ox}`;
+      },
+      ""
+    );
 
-  const ip_hex = octets.reduce(
-    (previousValue: string, currentValue: string, currentIndex: number) => {
-      const ox = parseInt(currentValue);
+    return ip_int;
+  }
 
-      if (currentIndex === 0)
-        return `${zeroPad(ox.toString(16))}`.toUpperCase();
-      return `${previousValue}.${zeroPad(ox.toString(16)).toUpperCase()}`;
-    },
-    ""
-  );
+  function convertToHex(ip: string) {
+    const octets = ip.split(".");
 
-  return ip_hex;
-}
+    const ip_hex = octets.reduce(
+      (previousValue: string, currentValue: string, currentIndex: number) => {
+        const ox = parseInt(currentValue);
 
-function convertToOct(ip: string) {
-  const octets = ip.split(".");
+        if (currentIndex === 0)
+          return `${zeroPad(ox.toString(16))}`.toUpperCase();
+        return `${previousValue}.${zeroPad(ox.toString(16)).toUpperCase()}`;
+      },
+      ""
+    );
 
-  const ip_oct = octets.reduce(
-    (previousValue: string, currentValue: string, currentIndex: number) => {
-      const ox = parseInt(currentValue);
+    return ip_hex;
+  }
 
-      if (currentIndex === 0)
-        return `${zeroPad(ox.toString(8), 4)}`.toUpperCase();
-      return `${previousValue}.${zeroPad(ox.toString(8), 4).toUpperCase()}`;
-    },
-    ""
-  );
+  function convertToOct(ip: string) {
+    const octets = ip.split(".");
 
-  return ip_oct;
-}
+    const ip_oct = octets.reduce(
+      (previousValue: string, currentValue: string, currentIndex: number) => {
+        const ox = parseInt(currentValue);
 
-function convertToBin(ip: string) {
-  const octets = ip.split(".");
+        if (currentIndex === 0)
+          return `${zeroPad(ox.toString(8), 4)}`.toUpperCase();
+        return `${previousValue}.${zeroPad(ox.toString(8), 4).toUpperCase()}`;
+      },
+      ""
+    );
 
-  const ip_bin = octets.reduce(
-    (previousValue: string, currentValue: string, currentIndex: number) => {
-      const ox = parseInt(currentValue);
+    return ip_oct;
+  }
 
-      if (currentIndex === 0) return `${zeroPad(ox.toString(2), 8)}`;
-      return `${previousValue}${zeroPad(ox.toString(2), 8)}`;
-    },
-    ""
-  );
+  function convertToBin(ip: string) {
+    const octets = ip.split(".");
 
-  return ip_bin;
-}
+    const ip_bin = octets.reduce(
+      (previousValue: string, currentValue: string, currentIndex: number) => {
+        const ox = parseInt(currentValue);
 
-function convertToDottedBin(ip: string) {
-  const octets = ip.split(".");
+        if (currentIndex === 0) return `${zeroPad(ox.toString(2), 8)}`;
+        return `${previousValue}${zeroPad(ox.toString(2), 8)}`;
+      },
+      ""
+    );
 
-  const ip_dot_bin = octets.reduce(
-    (previousValue: string, currentValue: string, currentIndex: number) => {
-      const ox = parseInt(currentValue);
+    return ip_bin;
+  }
 
-      if (currentIndex === 0) return `${zeroPad(ox.toString(2), 8)}`;
-      return `${previousValue}.${zeroPad(ox.toString(2), 8)}`;
-    },
-    ""
-  );
+  function convertToDottedBin(ip: string) {
+    const octets = ip.split(".");
 
-  return ip_dot_bin;
+    const ip_dot_bin = octets.reduce(
+      (previousValue: string, currentValue: string, currentIndex: number) => {
+        const ox = parseInt(currentValue);
+
+        if (currentIndex === 0) return `${zeroPad(ox.toString(2), 8)}`;
+        return `${previousValue}.${zeroPad(ox.toString(2), 8)}`;
+      },
+      ""
+    );
+
+    return ip_dot_bin;
+  }
 }
 
 // utility function
 function zeroPad(num: number | string, places = 2) {
   return String(num).padStart(places, "0");
+}
+
+// copy function
+async function copyfn(id: number) {
+  Object.values(ipFormats.value).forEach((n) => {
+    if (n.index === id) {
+      copyToClipboard(n.value);
+
+      // set copy state to true
+      n.onCopyState = true;
+      setTimeout(() => {
+        n.onCopyState = false;
+      }, 1000);
+    }
+  });
 }
 </script>
