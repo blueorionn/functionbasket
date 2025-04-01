@@ -1,10 +1,10 @@
 <template>
-  <section class="max-w-screen-xl mx-auto px-4" aria-label="wrapper">
+  <section class="mx-auto max-w-screen-xl px-4" aria-label="wrapper">
     <section class="py-12" id="about">
-      <h1 class="text-lg xl:text-xl font-semibold text-gray-700 cursor-default">
+      <h1 class="cursor-default text-lg font-semibold text-gray-700 xl:text-xl">
         FunctionBasket
       </h1>
-      <p class="my-4 text-base xl:text-lg font-normal text-gray-800">
+      <p class="my-4 text-base font-normal text-gray-800 xl:text-lg">
         This website is a personal toolkit designed to streamline various tasks
         for ethical hacking, networking, and general utility. It hosts a
         collection of tools I frequently use. Built for efficiency and
@@ -18,10 +18,10 @@
         experiment with different encoding techniques, this toolkit makes the
         process seamless.
       </p>
-      <div class="w-max my-4 flex justify-center items-center gap-6">
+      <div class="my-4 flex w-max items-center justify-center gap-6">
         <NuxtLink
           href="/"
-          class="group relative py-1 flex justify-center items-center gap-1.5 transition-all"
+          class="group relative flex items-center justify-center gap-1.5 py-1 transition-all"
           rel="nofollow noreferrer noopener"
           target="_blank"
         >
@@ -31,12 +31,12 @@
           />
           <span class="text-base text-gray-800">Github</span>
           <span
-            class="absolute h-0.5 w-full bottom-0 left-0 bg-gray-200 group-hover:bg-gray-500 transition-all"
+            class="absolute bottom-0 left-0 h-0.5 w-full bg-gray-200 transition-all group-hover:bg-gray-500"
           ></span>
         </NuxtLink>
         <NuxtLink
           href="/"
-          class="group relative py-1 flex justify-center items-center gap-1.5 transition-all"
+          class="group relative flex items-center justify-center gap-1.5 py-1 transition-all"
           rel="nofollow noreferrer noopener"
           target="_blank"
         >
@@ -46,12 +46,12 @@
           />
           <span class="text-base text-gray-800">Twitter (X)</span>
           <span
-            class="absolute h-0.5 w-full bottom-0 left-0 bg-gray-200 group-hover:bg-gray-500 transition-all"
+            class="absolute bottom-0 left-0 h-0.5 w-full bg-gray-200 transition-all group-hover:bg-gray-500"
           ></span>
         </NuxtLink>
         <NuxtLink
           href="/"
-          class="group relative py-1 flex justify-center items-center gap-1.5 transition-all"
+          class="group relative flex items-center justify-center gap-1.5 py-1 transition-all"
           rel="nofollow noreferrer noopener"
           target="_blank"
         >
@@ -66,28 +66,28 @@
           />
           <span class="text-base text-gray-800">Sponsor</span>
           <span
-            class="absolute h-0.5 w-full bottom-0 left-0 bg-gray-200 group-hover:bg-gray-500 transition-all"
+            class="absolute bottom-0 left-0 h-0.5 w-full bg-gray-200 transition-all group-hover:bg-gray-500"
           ></span>
         </NuxtLink>
       </div>
     </section>
     <section class="py-6" id="tools" aria-label="tools-section">
-      <h1 class="text-lg xl:text-xl font-bold text-gray-800 cursor-default">
+      <h1 class="cursor-default text-lg font-bold text-gray-800 xl:text-xl">
         TOOLS
       </h1>
-      <section class="py-4 grid grid-flow-row">
+      <section class="grid grid-flow-row py-4">
         <div
           v-for="collection in toolCollection"
           :key="collection.name"
           class="py-4"
         >
           <h2
-            class="py-2.5 full border-b border-gray-200 text-gray-800 font-semibold"
+            class="full border-b border-gray-200 py-2.5 font-semibold text-gray-800"
           >
             {{ collection.name }}
           </h2>
           <div
-            class="py-4 grid grid-flow-row md:grid-flow-col md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8"
+            class="grid grid-flow-row gap-6 py-4 md:grid-flow-col md:grid-cols-2 md:gap-8 lg:grid-cols-4"
           >
             <div
               v-for="tool in collection.tools"

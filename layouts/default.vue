@@ -3,7 +3,7 @@
   <PageHeader />
 
   <!-- Main Content -->
-  <main class="w-full min-h-[100vh] overflow-x-hidden bg-gray-100">
+  <main class="min-h-[100vh] w-full overflow-x-hidden bg-gray-100">
     <slot></slot>
   </main>
 

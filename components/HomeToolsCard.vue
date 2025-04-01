@@ -1,14 +1,14 @@
 <template>
   <NuxtLink
     :href="toolUrl"
-    class="group rounded shadow inline-block h-full w-full p-4 hover:shadow-md transition-all duration-200"
+    class="group inline-block h-full w-full rounded p-4 shadow transition-all duration-200 hover:shadow-md"
   >
     <h2
-      class="py-2.5 font-bold text-lg group-hover:underline text-gray-800 home-tools-card-title"
+      class="home-tools-card-title py-2.5 text-lg font-bold text-gray-800 group-hover:underline"
     >
       {{ title }}
     </h2>
-    <p class="py-0.5 font-normal text-base group-hover:underline text-gray-700">
+    <p class="py-0.5 text-base font-normal text-gray-700 group-hover:underline">
       {{ description }}
     </p>
   </NuxtLink>
