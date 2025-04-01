@@ -1,5 +1,5 @@
-<script setup>
-import toolCollection from "~/data/tools.ts";
+<script setup lang="ts">
+import { toolsCollection } from "~/data/tools";
 </script>
 
 <template>
@@ -81,15 +81,15 @@ import toolCollection from "~/data/tools.ts";
       </h1>
       <section class="grid grid-flow-row py-4">
         <div
-          v-for="collection in toolCollection"
-          :key="collection.name"
+          v-for="collection in toolsCollection"
+          :key="collection.collectionId"
           class="py-4"
         >
           <h2
             class="full border-b border-gray-200 py-2.5 font-semibold text-gray-800"
-            :id="collection.id"
+            :id="collection.collectionId"
           >
-            {{ collection.name }}
+            {{ collection.collectionCategory }}
           </h2>
           <div
             class="grid w-full grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-4 py-4"

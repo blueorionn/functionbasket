@@ -1,7 +1,7 @@
-const toolCollection = [
+export const toolsCollection = [
   {
-    name: "Obfuscator Tools",
-    id: "obfuscator-tools",
+    collectionCategory: "Obfuscator Tools",
+    collectionId: "obfuscator-tools",
     tools: [
       {
         id: 1,
@@ -19,10 +19,9 @@ const toolCollection = [
       },
     ],
   },
-
   {
-    name: "Encoder-Decoder",
-    id: "encoder-decoder",
+    collectionCategory: "Encoder-Decoder",
+    collectionId: "encoder-decoder",
     tools: [
       {
         id: 1,
@@ -62,5 +61,3 @@ const toolCollection = [
     ],
   },
 ];
-
-export default toolCollection;
