@@ -5,5 +5,5 @@ export default defineNuxtConfig({
   modules: ["@nuxtjs/tailwindcss", "@nuxt/icon", "@nuxt/fonts", "@nuxt/image"],
   tailwindcss: {
     cssPath: "~/assets/css/tailwind.css",
-  },
+  }
 });
