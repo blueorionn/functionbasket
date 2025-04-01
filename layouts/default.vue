@@ -1,19 +1,3 @@
-<template>
-  <!-- Header -->
-  <PageHeader />
-
-  <!-- Main Content -->
-  <main class="min-h-[100vh] w-full overflow-x-hidden bg-gray-100">
-    <slot></slot>
-  </main>
-
-  <!-- Footer -->
-  <PageFooter />
-</template>
-
-<!-- Import your global CSS file -->
-<style src="~/assets/css/global.css"></style>
-
 <script setup lang="ts">
 useSeoMeta({
   title: "Function Basket - Personal Toolkit Collection",
@@ -30,3 +14,19 @@ useSeoMeta({
   twitterImage: "https://www.functionbasket.com/favicon.ico",
 });
 </script>
+
+<template>
+  <!-- Header -->
+  <PageHeader />
+
+  <!-- Main Content -->
+  <main class="min-h-[100vh] w-full overflow-x-hidden bg-gray-100">
+    <slot></slot>
+  </main>
+
+  <!-- Footer -->
+  <PageFooter />
+</template>
+
+<!-- Import your global CSS file -->
+<style src="~/assets/css/global.css"></style>

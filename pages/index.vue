@@ -1,3 +1,7 @@
+<script setup>
+import toolCollection from "~/data/tools.ts";
+</script>
+
 <template>
   <section class="mx-auto max-w-screen-xl px-4" aria-label="wrapper">
     <section class="py-12" id="about">
@@ -107,7 +111,3 @@
     </section>
   </section>
 </template>
-
-<script setup>
-import toolCollection from "~/data/tools.json";
-</script>
