@@ -72,18 +72,35 @@
       </div>
     </section>
     <section class="py-6" id="tools" aria-label="tools-section">
-      <h1 class="text-lg xl:text-xl font-semibold text-gray-700 cursor-default">
+      <h1 class="text-lg xl:text-xl font-bold text-gray-800 cursor-default">
         TOOLS
       </h1>
-      <section
-        class="py-4 grid grid-flow-row md:grid-flow-col md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8"
-      >
-        <div v-for="tool in tools" :key="tool.id" class="h-full w-full">
-          <HomeToolsCard
-            :title="tool.title"
-            :description="tool.description"
-            :tool-url="tool.location"
-          />
+      <section class="py-4 grid grid-flow-row">
+        <div
+          v-for="collection in toolCollection"
+          :key="collection.name"
+          class="py-4"
+        >
+          <h2
+            class="py-2.5 full border-b border-gray-200 text-gray-800 font-semibold"
+          >
+            {{ collection.name }}
+          </h2>
+          <div
+            class="py-4 grid grid-flow-row md:grid-flow-col md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8"
+          >
+            <div
+              v-for="tool in collection.tools"
+              :key="tool.id"
+              class="h-full w-full"
+            >
+              <HomeToolsCard
+                :title="tool.title"
+                :description="tool.description"
+                :tool-url="tool.location"
+              />
+            </div>
+          </div>
         </div>
       </section>
     </section>
@@ -91,5 +108,5 @@
 </template>
 
 <script setup>
-import tools from "~/data/tools.json";
+import toolCollection from "~/data/tools.json";
 </script>
