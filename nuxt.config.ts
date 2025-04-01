@@ -13,11 +13,11 @@ export default defineNuxtConfig({
     cssPath: "~/assets/css/tailwind.css",
   },
   pwa: {
+    registerType: "autoUpdate",
     manifest: {
       name: "Function Basket",
       short_name: "FB",
       theme_color: "#242124",
-      display: "standalone",
       start_url: "/",
       icons: [
         {
@@ -39,8 +39,19 @@ export default defineNuxtConfig({
           src: "/android-chrome-512x512.png",
           sizes: "512x512",
           type: "image/png",
+          purpose: "any",
+        },
+        {
+          src: "/android-chrome-512x512.png",
+          sizes: "512x512",
+          type: "image/png",
+          purpose: "maskable",
         },
       ],
+    },
+    devOptions: {
+      enabled: true,
+      type: "module",
     },
   },
 });

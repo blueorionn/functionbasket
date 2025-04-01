@@ -26,6 +26,9 @@ useSeoMeta({
 
   <!-- Footer -->
   <PageFooter />
+
+  <!-- PWA Application -->
+  <NuxtPwaManifest />
 </template>
 
 <!-- Import your global CSS file -->
