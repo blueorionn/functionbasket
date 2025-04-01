@@ -83,11 +83,12 @@
         >
           <h2
             class="full border-b border-gray-200 py-2.5 font-semibold text-gray-800"
+            :id="collection.id"
           >
             {{ collection.name }}
           </h2>
           <div
-            class="grid grid-flow-row gap-6 py-4 md:grid-flow-col md:grid-cols-2 md:gap-8 lg:grid-cols-4"
+            class="grid w-full grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-4 py-4"
           >
             <div
               v-for="tool in collection.tools"
