@@ -1,6 +1,16 @@
 <script setup lang="ts">
 const pageData = getPageData('encoder-decoder', 'URL Encoder-Decoder')
 
+useSeoMeta({
+  title: `${pageData?.title}`,
+  description: `${pageData?.description}`,
+  ogTitle: `${pageData?.title}`,
+  ogDescription: `${pageData?.description}`,
+  twitterCard: 'summary',
+  twitterTitle: `${pageData?.title}`,
+  twitterDescription: `${pageData?.description}`,
+})
+
 // Encoder/Decoder functionality
 const inputText = ref('')
 const outputText = ref('')
@@ -23,6 +33,10 @@ const copyHandler = () => {
     clearTimeout(timeOutId)
   }
 }
+
+const deleteOutput = () => {
+  outputText.value = ''
+}
 </script>
 
 <template>
@@ -37,65 +51,83 @@ const copyHandler = () => {
     </section>
 
     <!-- Encoder/Decoder -->
-    <section class="mx-auto w-full max-w-4xl p-4">
-      <div class="my-4 flex h-full w-full items-center justify-start gap-4">
-        <input
+    <section
+      class="mx-auto w-full max-w-4xl p-4 xl:flex xl:max-w-6xl xl:items-center xl:justify-between xl:gap-16"
+    >
+      <div class="my-4 h-full w-full">
+        <div class="flex w-full items-center justify-start gap-4 py-4">
+          <h2
+            class="cursor-default text-lg font-semibold text-gray-700 xl:text-xl"
+          >
+            Input
+          </h2>
+          <select
+            name="operation"
+            id="operation"
+            v-model="selectedOption"
+            class="block w-full max-w-36 rounded border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
+          >
+            <option value="encode">Encode</option>
+            <option value="decode">Decode</option>
+          </select>
+        </div>
+        <textarea
           type="text"
           name="url-input"
           id="url-input"
-          class="block w-full max-w-2xl rounded border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
-          placeholder="URL"
+          class="block h-32 w-full max-w-2xl resize-none rounded border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 xl:h-64"
+          placeholder="URL or Text"
           v-model="inputText"
-        />
-        <select
-          name="operation"
-          id="operation"
-          v-model="selectedOption"
-          class="block w-full max-w-36 rounded border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
-        >
-          <option value="encode">Encode</option>
-          <option value="decode">Decode</option>
-        </select>
+        ></textarea>
       </div>
-      <div class="my-4 flex h-full w-full items-center justify-start gap-4">
-        <input
+      <div class="my-4 h-full w-full">
+        <div class="flex w-full items-center justify-start gap-4 py-4">
+          <h2
+            class="cursor-default text-lg font-semibold text-gray-700 xl:text-xl"
+          >
+            Output
+          </h2>
+          <button
+            type="button"
+            :onclick="copyHandler"
+            class="flex items-center justify-center rounded bg-blue-500 px-2.5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-600 focus:outline-none focus:ring-blue-300 sm:w-auto"
+          >
+            <span class="sr-only">Copy</span>
+            <Transition name="fade">
+              <Icon
+                name="ic:baseline-content-copy"
+                style="height: 1.15rem; width: 1.15rem; aspect-ratio: auto"
+                v-if="!copyState"
+              />
+              <Icon
+                name="ic:baseline-check"
+                style="height: 1.15rem; width: 1.15rem; aspect-ratio: auto"
+                v-else
+              />
+            </Transition>
+          </button>
+          <button
+            type="button"
+            :onclick="deleteOutput"
+            class="flex items-center justify-center rounded bg-blue-500 px-2.5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-600 focus:outline-none focus:ring-blue-300 sm:w-auto"
+          >
+            <span class="sr-only">Delete</span>
+            <Icon
+              name="ic:outline-delete"
+              style="height: 1.15rem; width: 1.15rem; aspect-ratio: auto"
+            />
+          </button>
+        </div>
+        <textarea
           type="text"
           name="output"
           id="output"
           v-model="outputText"
-          class="block w-full max-w-2xl rounded border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
+          class="block h-32 w-full max-w-2xl resize-none rounded border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 xl:h-64"
+          rows="5"
           placeholder="Output"
           disabled
-        />
-        <button
-          type="button"
-          :onclick="copyHandler"
-          class="flex w-full items-center justify-center rounded bg-blue-500 px-2.5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-600 focus:outline-none focus:ring-blue-300 sm:w-auto"
-        >
-          <span class="sr-only">Copy</span>
-          <Transition name="fade">
-            <Icon
-              name="ic:baseline-content-copy"
-              style="height: 1.15rem; width: 1.15rem; aspect-ratio: auto"
-              v-if="!copyState"
-            />
-            <Icon
-              name="ic:baseline-check"
-              style="height: 1.15rem; width: 1.15rem; aspect-ratio: auto"
-              v-else
-            />
-          </Transition>
-        </button>
-        <button
-          type="button"
-          class="flex w-full items-center justify-center rounded bg-blue-500 px-2.5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-600 focus:outline-none focus:ring-blue-300 sm:w-auto"
-        >
-          <span class="sr-only">Delete</span>
-          <Icon
-            name="ic:outline-delete"
-            style="height: 1.15rem; width: 1.15rem; aspect-ratio: auto"
-          />
-        </button>
+        ></textarea>
       </div>
     </section>
 
