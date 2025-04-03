@@ -100,6 +100,111 @@ const copyHandler = () => {
     </section>
 
     <!-- General Information -->
+    <section
+      class="flex w-full flex-col items-start justify-between gap-4 p-4 lg:gap-16 xl:flex-row xl:gap-8 xl:py-8"
+    >
+      <section class="w-full xl:w-[50%]">
+        <h2 class="my-4 text-xl font-semibold text-gray-600">
+          What is URL encoding?
+        </h2>
+        <p class="my-2.5 text-lg font-normal text-gray-700">
+          URL Encoding (also known as percent-encoding) is a method to encode
+          arbitrary data in a uniform resource identifier (URI) using only the
+          ASCII characters legal within a URI.
+        </p>
+        <p class="my-2.5 text-lg font-normal text-gray-700">
+          URLs are designed to use characters from the ASCII character set.
+          Because URLs often need to include characters outside this set (like
+          spaces or non-ASCII characters), or characters with special meaning
+          within the URL syntax, URL encoding is necessary.
+        </p>
+        <h2 class="my-4 text-lg font-semibold text-gray-600">
+          Reserved Characters
+        </h2>
+        <p class="my-2.5 text-lg font-normal text-gray-700">
+          <a
+            href="https://datatracker.ietf.org/doc/html/rfc3986"
+            target="_blank"
+            rel="noreferrer noopener"
+            class="text-blue-500"
+            >RFC 3986
+          </a>
+          defines "reserved characters" as those that have special meaning
+          within the URL syntax. These characters must be encoded when they
+          appear as data within a URL component, to prevent them from being
+          misinterpreted as URL syntax.
+        </p>
+        <table
+          class="my-4 w-full text-left text-sm text-gray-500 rtl:text-right"
+        >
+          <tbody>
+            <tr class="border border-gray-200 bg-gray-100">
+              <td class="border-r border-gray-300 p-2.5">!</td>
+              <td class="border-r border-gray-300 p-2.5">@</td>
+              <td class="border-r border-gray-300 p-2.5">#</td>
+              <td class="border-r border-gray-300 p-2.5">$</td>
+              <td class="border-r border-gray-300 p-2.5">&</td>
+              <td class="border-r border-gray-300 p-2.5">'</td>
+              <td class="border-r border-gray-300 p-2.5">(</td>
+              <td class="border-r border-gray-300 p-2.5">)</td>
+              <td class="border-r border-gray-300 p-2.5">*</td>
+              <td class="border-r border-gray-300 p-2.5">+</td>
+              <td class="border-r border-gray-300 p-2.5">,</td>
+              <td class="border-r border-gray-300 p-2.5">/</td>
+              <td class="border-r border-gray-300 p-2.5">:</td>
+              <td class="border-r border-gray-300 p-2.5">;</td>
+              <td class="border-r border-gray-300 p-2.5">=</td>
+              <td class="border-r border-gray-300 p-2.5">?</td>
+              <td class="border-r border-gray-300 p-2.5">[</td>
+              <td class="p-2.5">]</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section class="w-full xl:w-[50%]">
+        <h2 class="my-4 text-xl font-semibold text-gray-600">
+          How URL-Encoding works?
+        </h2>
+        <h3 class="my-2.5 text-lg font-semibold text-gray-600">
+          ASCII Characters:
+        </h3>
+        <ul class="mx-4 list-disc text-lg">
+          <li class="py-1.5">
+            These characters, as defined by RFC 3986, have special meaning
+            within the URL structure.
+          </li>
+          <li class="py-1.5">
+            When they need to be treated as data (not as URL syntax), they are
+            converted to their corresponding ASCII hexadecimal representation.
+          </li>
+          <li class="py-1.5">
+            The two hexadecimal digits of the ASCII value are then prefixed with
+            a percent sign (<span class="rounded bg-gray-200 px-0.5">%</span>).
+          </li>
+        </ul>
+        <h3 class="my-2.5 text-lg font-semibold text-gray-600">
+          Non-ASCII Characters:
+        </h3>
+        <ul class="mx-4 list-disc text-lg">
+          <li class="py-1.5">
+            These characters fall outside the standard ASCII range.
+          </li>
+          <li class="py-1.5">
+            They are first encoded into their UTF-8 byte representation.
+          </li>
+          <li class="5 py-1">
+            Each byte of the UTF-8 representation is then converted into its
+            hexadecimal equivalent.
+          </li>
+          <li class="py-1.5">
+            Each hexadecimal byte is prefixed with a percent sign (<span
+              class="rounded bg-gray-200 px-0.5"
+              >%</span
+            >).
+          </li>
+        </ul>
+      </section>
+    </section>
   </section>
 </template>
 
