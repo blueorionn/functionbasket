@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { toolsCollection } from "~/data/tools";
+import { toolsCollection } from '~/data/tools'
 </script>
 
 <template>

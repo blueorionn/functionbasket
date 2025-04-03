@@ -1,9 +1,9 @@
-import { writeText } from "clipboard-polyfill";
+import { writeText } from 'clipboard-polyfill'
 
 export const copyText = async (text: string) => {
   try {
-    await writeText(text);
+    await writeText(text)
   } catch (err) {
-    console.error("Failed to copy: ", err);
+    console.error('Failed to copy: ', err)
   }
-};
+}

@@ -16,7 +16,7 @@
 
 <style scoped>
 .home-tools-card-title {
-  font-family: "Space Grotesk", sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
 }
 </style>
 
@@ -25,5 +25,5 @@ const props = defineProps({
   title: String,
   description: String,
   toolUrl: String,
-});
+})
 </script>

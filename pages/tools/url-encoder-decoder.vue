@@ -1,28 +1,28 @@
 <script setup lang="ts">
-const pageData = getPageData("encoder-decoder", "URL Encoder-Decoder");
+const pageData = getPageData('encoder-decoder', 'URL Encoder-Decoder')
 
 // Encoder/Decoder functionality
-const inputText = ref("");
-const outputText = ref("");
-const selectedOption = ref("encode");
+const inputText = ref('')
+const outputText = ref('')
+const selectedOption = ref('encode')
 
 watch(inputText, () => {
-  if (selectedOption.value === "encode") {
-    outputText.value = encodeURIComponent(inputText.value);
+  if (selectedOption.value === 'encode') {
+    outputText.value = encodeURIComponent(inputText.value)
   }
-});
+})
 
 // copy button logic
-const copyState = ref(false);
+const copyState = ref(false)
 const copyHandler = () => {
-  copyText(outputText.value);
-  copyState.value = true;
-  const timeOutId = setTimeout(() => (copyState.value = false), 500);
+  copyText(outputText.value)
+  copyState.value = true
+  const timeOutId = setTimeout(() => (copyState.value = false), 500)
 
   return () => {
-    clearTimeout(timeOutId);
-  };
-};
+    clearTimeout(timeOutId)
+  }
+}
 </script>
 
 <template>

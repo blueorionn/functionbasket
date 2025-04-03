@@ -68,6 +68,6 @@ nav {
   font-family: Robot, sans-serif;
 }
 .space-grotesk {
-  font-family: "Space Grotesk", sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
 }
 </style>
