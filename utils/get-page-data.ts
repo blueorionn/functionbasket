@@ -18,11 +18,11 @@ export default function getPageData(
       location: string;
     }
   | undefined {
-  // Return tool if toolsCollection's tool.id match parameter toolName
+  // Return tool if it exists on toolsCollection
   for (const collection of toolsCollection) {
-    // check if category exists
-    if (collection.collectionId !== collectionId) return undefined;
-
-    return collection.tools.find((tool) => tool.title === toolName);
+    // If category exists
+    if (collection.collectionId === collectionId) {
+      return collection.tools.find((tool) => tool.title === toolName);
+    }
   }
 }
