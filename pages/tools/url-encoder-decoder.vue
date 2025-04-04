@@ -39,6 +39,7 @@ const copyHandler = () => {
   }
 }
 
+// delete buggon logic
 const deleteOutput = () => {
   outputText.value = ''
 }

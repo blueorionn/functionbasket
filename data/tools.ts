@@ -39,24 +39,36 @@ export const toolsCollection = [
       },
       {
         id: 3,
-        title: 'ASCII Encoder-Decoder',
-        description:
-          "ASCII assigns numerical codes to characters in the English alphabet, numbers, and common symbols. It's a fundamental character encoding standard, representing text using 7-bit values, allowing computers to process and display text. ",
-        location: '/tools/ascii-encoder-decoder',
-      },
-      {
-        id: 4,
-        title: 'Unicode Encoder-Decoder',
-        description:
-          ' Unicode is a character encoding standard that supports a vast range of characters from nearly all written languages. UTF-8, a common Unicode encoding, represents characters using variable-length byte sequences, enabling multilingual text representation.',
-        location: '/tools/unicode-encoder-decoder',
-      },
-      {
-        id: 5,
         title: 'HTML Encoder-Decoder',
         description:
           'HTML encoding converts special characters, like <, >, and &, into their corresponding HTML entities. This prevents browsers from misinterpreting these characters as HTML tags or special instructions, ensuring correct rendering of web content',
         location: '/tools/html-encoder-decoder',
+      },
+    ],
+  },
+  {
+    collectionCategory: 'Number System Converter',
+    collectionId: 'number-system-converter',
+    tools: [
+      {
+        id: 1,
+        title: 'Decimal to Octal Converter',
+        description:
+          'Convert a decimal number into its octal representation. It takes a decimal input and returns a string that represents the corresponding octal value, using either built-in conversion methods.',
+        location: '/tools/decimal-to-octal',
+      },
+    ],
+  },
+  {
+    collectionCategory: 'Miscellaneous Converter',
+    collectionId: 'miscellaneous-converter',
+    tools: [
+      {
+        id: 1,
+        title: 'ASCII to Decimal Converter',
+        description:
+          "This tool takes an ASCII character as input and converts it to the decimal value by the character's Unicode code point using a built-in conversion method.",
+        location: '/tools/ascii-to-decimal-converter',
       },
     ],
   },
