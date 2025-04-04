@@ -16,9 +16,14 @@ const inputText = ref('')
 const outputText = ref('')
 const selectedOption = ref('encode')
 
-watch(inputText, () => {
+watch([inputText, selectedOption], () => {
   if (selectedOption.value === 'encode') {
-    outputText.value = encodeURIComponent(inputText.value)
+    outputText.value = encodeURIComponent(inputText.value).replace(
+      /[!'()*]/g,
+      (c) => `%${c.charCodeAt(0).toString(16).toUpperCase()}`
+    )
+  } else if (selectedOption.value === 'decode') {
+    outputText.value = decodeURIComponent(inputText.value)
   }
 })
 
