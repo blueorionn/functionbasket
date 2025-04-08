@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import ToolPage from '@/components/(home-tool-component)/ToolPage'
 import { AiOutlineHeart } from 'react-icons/ai'
 import { AiOutlineGithub } from 'react-icons/ai'
 import { AiFillTwitterCircle } from 'react-icons/ai'
@@ -89,7 +90,9 @@ export default function Home() {
             <h1 className='cursor-default text-lg font-bold text-gray-800 xl:text-xl'>
               TOOLS
             </h1>
-            <section className='grid grid-flow-row py-4'></section>
+            <section className='grid grid-flow-row py-4'>
+              <ToolPage />
+            </section>
           </section>
         </section>
       </main>
