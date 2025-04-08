@@ -1,4 +1,6 @@
 import Link from 'next/link'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 import { AiOutlineHeart } from 'react-icons/ai'
 import { AiOutlineGithub } from 'react-icons/ai'
 import { AiFillTwitterCircle } from 'react-icons/ai'
@@ -6,6 +8,7 @@ import { AiFillTwitterCircle } from 'react-icons/ai'
 export default function Home() {
   return (
     <>
+      <Header />
       <main className='min-h-[100vh] w-full overflow-x-hidden bg-gray-100'>
         <section className='mx-auto max-w-screen-xl px-4' aria-label='wrapper'>
           <section className='py-12' id='about'>
@@ -90,6 +93,7 @@ export default function Home() {
           </section>
         </section>
       </main>
+      <Footer />
     </>
   )
 }
