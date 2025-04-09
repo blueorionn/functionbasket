@@ -1,10 +1,18 @@
 'use client'
+import { useState, useEffect } from 'react'
 import { useThemeProvider } from '@/provider/ThemeProvider'
 import { AiFillMoon } from 'react-icons/ai'
 import { AiFillSun } from 'react-icons/ai'
 
 export default function ThemeToggleButton() {
+  const [mounted, setMounted] = useState(false)
   const { theme, setTheme } = useThemeProvider()
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) return null
 
   return (
     <>
@@ -31,6 +39,7 @@ export default function ThemeToggleButton() {
               width: '1.5rem',
               aspectRatio: 'auto',
             }}
+            className='fill-gray-200'
           />
         )}
       </button>

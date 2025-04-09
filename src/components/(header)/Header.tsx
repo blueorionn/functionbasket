@@ -8,7 +8,7 @@ import { AiFillTwitterCircle } from 'react-icons/ai'
 export default function Header() {
   return (
     <>
-      <header className='relative h-max w-full py-4 shadow'>
+      <header className='relative h-max w-full bg-[var(--default-light)] py-8 dark:bg-[var(--default-dark)]'>
         <div className='mx-auto flex max-w-screen-xl items-center justify-between px-4 py-4'>
           <Link href='/' className='flex items-center justify-center gap-4'>
             <Image
@@ -18,7 +18,7 @@ export default function Header() {
               height='192'
               className='aspect-auto h-8 w-8'
             />
-            <h1 className='space-grotesk text-xl font-bold text-gray-800'>
+            <h1 className='space-grotesk text-xl font-bold text-gray-800 dark:text-gray-200'>
               FunctionBasket
             </h1>
           </Link>
@@ -36,6 +36,7 @@ export default function Header() {
                     width: '1.5rem',
                     aspectRatio: 'auto',
                   }}
+                  className='dark:fill-gray-200'
                 />
               </Link>
               <Link
@@ -50,9 +51,9 @@ export default function Header() {
                     width: '1.5rem',
                     aspectRatio: 'auto',
                   }}
+                  className='dark:fill-gray-200'
                 />
               </Link>
-
               <ThemeToggleButton />
             </div>
           </div>
@@ -64,6 +65,7 @@ export default function Header() {
             <span className='sr-only'>Toogle Menu</span>
             <CiMenuFries
               style={{ height: '1.5rem', width: '1.5rem', aspectRatio: 'auto' }}
+              className='dark:fill-gray-200'
             />
           </button>
         </div>

@@ -10,13 +10,13 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main className='min-h-[100vh] w-full overflow-x-hidden bg-gray-100'>
+      <main className='min-h-[100vh] w-full overflow-x-hidden bg-[var(--default-light)] dark:bg-[var(--default-dark)]'>
         <section className='mx-auto max-w-screen-xl px-4' aria-label='wrapper'>
           <section className='py-12' id='about'>
-            <h1 className='cursor-default text-lg font-semibold text-gray-700 xl:text-xl'>
+            <h1 className='cursor-default text-lg font-semibold text-gray-700 xl:text-xl dark:text-gray-200'>
               FunctionBasket
             </h1>
-            <p className='my-4 text-base font-normal text-gray-800 xl:text-lg'>
+            <p className='my-4 text-base font-normal text-gray-800 xl:text-lg dark:text-gray-300'>
               This website is a personal toolkit designed to streamline various
               tasks for ethical hacking, networking, and general utility. It
               hosts a collection of tools I frequently use. Built for efficiency
@@ -45,9 +45,12 @@ export default function Home() {
                     width: '1.25rem',
                     aspectRatio: 'auto',
                   }}
+                  className='dark:fill-gray-200'
                 />
-                <span className='text-base text-gray-800'>Github</span>
-                <span className='absolute bottom-0 left-0 h-0.5 w-full bg-gray-200 transition-all group-hover:bg-gray-500'></span>
+                <span className='text-base text-gray-800 dark:text-gray-200'>
+                  Github
+                </span>
+                <span className='absolute bottom-0 left-0 h-0.5 w-full bg-gray-200 transition-all group-hover:bg-gray-500 dark:bg-gray-800'></span>
               </Link>
               <Link
                 href='/'
@@ -62,9 +65,12 @@ export default function Home() {
                     width: '1.25rem',
                     aspectRatio: 'auto',
                   }}
+                  className='dark:fill-gray-200'
                 />
-                <span className='text-base text-gray-800'>Twitter (X)</span>
-                <span className='absolute bottom-0 left-0 h-0.5 w-full bg-gray-200 transition-all group-hover:bg-gray-500'></span>
+                <span className='text-base text-gray-800 dark:text-gray-200'>
+                  Twitter (X)
+                </span>
+                <span className='absolute bottom-0 left-0 h-0.5 w-full bg-gray-200 transition-all group-hover:bg-gray-500 dark:bg-gray-800'></span>
               </Link>
               <Link
                 href='/'
@@ -81,13 +87,15 @@ export default function Home() {
                     color: 'hotpink',
                   }}
                 />
-                <span className='text-base text-gray-800'>Sponsor</span>
-                <span className='absolute bottom-0 left-0 h-0.5 w-full bg-gray-200 transition-all group-hover:bg-gray-500'></span>
+                <span className='text-base text-gray-800 dark:text-gray-200'>
+                  Sponsor
+                </span>
+                <span className='absolute bottom-0 left-0 h-0.5 w-full bg-gray-200 transition-all group-hover:bg-gray-500 dark:bg-gray-800'></span>
               </Link>
             </div>
           </section>
           <section className='py-6' id='tools' aria-label='tools-section'>
-            <h1 className='cursor-default text-lg font-bold text-gray-800 xl:text-xl'>
+            <h1 className='cursor-default text-lg font-bold text-gray-800 xl:text-xl dark:text-gray-200'>
               TOOLS
             </h1>
             <section className='grid grid-flow-row py-4'>
