@@ -1,9 +1,9 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import ThemeToggleButton from './ThemeToggleButton'
 import { CiMenuFries } from 'react-icons/ci'
 import { AiFillGithub } from 'react-icons/ai'
 import { AiFillTwitterCircle } from 'react-icons/ai'
-import { AiFillMoon } from 'react-icons/ai'
 
 export default function Header() {
   return (
@@ -52,16 +52,8 @@ export default function Header() {
                   }}
                 />
               </Link>
-              <button className='cursor-pointer'>
-                <span className='sr-only'>Theme toggle</span>
-                <AiFillMoon
-                  style={{
-                    height: '1.5rem',
-                    width: '1.5rem',
-                    aspectRatio: 'auto',
-                  }}
-                />
-              </button>
+
+              <ThemeToggleButton />
             </div>
           </div>
           <button

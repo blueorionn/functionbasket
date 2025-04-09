@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import Header from '@/components/Header'
+import Header from '@/components/(header)/Header'
 import Footer from '@/components/Footer'
 import ToolPage from '@/components/(home-tool-component)/ToolPage'
 import { AiOutlineHeart } from 'react-icons/ai'
