@@ -15,6 +15,21 @@ Built for efficiency and accessibility, this platform consolidates these utiliti
 - node (^20.19.0)
 - npm (^9.5.0)
 
+## Testing
+
+Run the below commands for testing setup
+
+```bash
+npx playwright install
+sudo npx playwright install-deps
+```
+
+To run the test execute the below command
+
+```bash
+npm run test
+```
+
 ## LICENSE
 
 This project is released under the MIT License. Feel free to modify and experiment with it!
