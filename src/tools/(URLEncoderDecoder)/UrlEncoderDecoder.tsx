@@ -1,6 +1,7 @@
 import Header from '@/components/(header)/Header'
 import Footer from '@/components/Footer'
 import EncoderDecoder from './EncoderDecoder'
+import InlineCodeBlock from '@/components/InlineCodeBlock'
 
 export default function URLEncoderDecoder() {
   return (
@@ -45,9 +46,9 @@ export default function URLEncoderDecoder() {
                   href='https://datatracker.ietf.org/doc/html/rfc3986'
                   target='_blank'
                   rel='noreferrer noopener'
-                  className='text-blue-500 dark:text-blue-400'
+                  className='text-blue-500 transition-all hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-500'
                 >
-                  RFC 3986
+                  RFC 3986{' '}
                 </a>
                 defines {'"reserved characters"'} as those that have special
                 meaning within the URL syntax. These characters must be encoded
@@ -120,47 +121,36 @@ export default function URLEncoderDecoder() {
               <h3 className='my-2.5 text-lg font-semibold text-gray-600 dark:text-gray-400'>
                 ASCII Characters:
               </h3>
-              <ul className='mx-4 list-disc text-lg text-gray-700 dark:text-gray-300'>
-                <li className='py-1.5'>
-                  These characters, as defined by RFC 3986, have special meaning
-                  within the URL structure.
-                </li>
-                <li className='py-1.5'>
-                  When they need to be treated as data (not as URL syntax), they
-                  are converted to their corresponding ASCII hexadecimal
-                  representation.
-                </li>
-                <li className='py-1.5'>
-                  The two hexadecimal digits of the ASCII value are then
-                  prefixed with a percent sign (
-                  <span className='rounded bg-gray-200 p-[.25] text-sm dark:bg-gray-800'>
-                    %
-                  </span>
-                  ).
-                </li>
-              </ul>
+              <p className='my-2 text-lg font-normal text-gray-700 dark:text-gray-300'>
+                For ASCII characters (code points 0–127), URL encoding checks if
+                the character is {'"unreserved"'} (like letters, digits,{' '}
+                <InlineCodeBlock text='-' />, <InlineCodeBlock text='_' />,{' '}
+                <InlineCodeBlock text='.' />, <InlineCodeBlock text='~' />
+                ). If it’s not, the character is replaced with a percent sign{' '}
+                <InlineCodeBlock text='%' />
+                followed by its two-digit hexadecimal ASCII value. For example,
+                the space character (<InlineCodeBlock text=' ' />) has an ASCII
+                value of 32, which is
+                <InlineCodeBlock text='0x20' />
+                in hex, so it becomes <InlineCodeBlock text='%20' />. Similarly,
+                <InlineCodeBlock text='@' /> (ASCII 64) becomes{' '}
+                <InlineCodeBlock text='%40' />.
+              </p>
+
               <h3 className='my-2.5 text-lg font-semibold text-gray-600 dark:text-gray-400'>
                 Non-ASCII Characters:
               </h3>
-              <ul className='mx-4 list-disc text-lg text-gray-700 dark:text-gray-300'>
-                <li className='py-1.5'>
-                  These characters fall outside the standard ASCII range.
-                </li>
-                <li className='py-1.5'>
-                  They are first encoded into their UTF-8 byte representation.
-                </li>
-                <li className='5 py-1'>
-                  Each byte of the UTF-8 representation is then converted into
-                  its hexadecimal equivalent.
-                </li>
-                <li className='py-1.5'>
-                  Each hexadecimal byte is prefixed with a percent sign (
-                  <span className='rounded bg-gray-200 p-[.25] text-sm dark:bg-gray-800'>
-                    %
-                  </span>
-                  ).
-                </li>
-              </ul>
+              <p className='my-2 text-lg font-normal text-gray-700 dark:text-gray-300'>
+                For non-ASCII characters (code points above 127), the character
+                is first encoded using UTF-8 into one or more bytes. Each byte
+                is then percent-encoded separately. For instance, the Unicode
+                character <InlineCodeBlock text='✓' /> (U+2713) is UTF-8 encoded
+                into three bytes: <InlineCodeBlock text='E2 9C 93' />, and these
+                are percent-encoded as <InlineCodeBlock text='%E2%9C%93' />.
+                This ensures characters from all languages and symbols can be
+                safely represented in URLs using only ASCII-compatible
+                sequences.
+              </p>
             </section>
           </section>
         </section>
