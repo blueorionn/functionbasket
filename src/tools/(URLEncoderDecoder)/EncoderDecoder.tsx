@@ -19,7 +19,7 @@ export default function EncoderDecoder() {
 
   const encodeURI = (text: string) => {
     return encodeURIComponent(text).replace(
-      /[!;,/?:@&=+$#]/gi,
+      /[!@#$&'()*+,/:;=?]/gi,
       (c) => '%' + c.charCodeAt(0).toString(16)
     )
   }
