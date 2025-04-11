@@ -26,102 +26,25 @@ export default function URLEncoderDecoder() {
               <h2 className='my-4 text-xl font-semibold text-gray-600 dark:text-gray-400'>
                 What is URL encoding?
               </h2>
-              <p className='my-2.5 text-lg font-normal text-gray-700 dark:text-gray-300'>
+              <p className='my-2.5 text-base font-normal text-gray-700 xl:text-lg dark:text-gray-300'>
                 URL Encoding (also known as percent-encoding) is a method to
                 encode arbitrary data in a uniform resource identifier (URI)
                 using only the ASCII characters legal within a URI.
               </p>
-              <p className='my-2.5 text-lg font-normal text-gray-700 dark:text-gray-300'>
+              <p className='my-2.5 text-base font-normal text-gray-700 xl:text-lg dark:text-gray-300'>
                 URLs are designed to use characters from the ASCII character
                 set. Because URLs often need to include characters outside this
                 set (like spaces or non-ASCII characters), or characters with
                 special meaning within the URL syntax, URL encoding is
                 necessary.
               </p>
-              <h2 className='my-4 text-lg font-semibold text-gray-600 dark:text-gray-400'>
-                Reserved Characters
-              </h2>
-              <p className='my-2.5 text-lg font-normal text-gray-700 dark:text-gray-300'>
-                <a
-                  href='https://datatracker.ietf.org/doc/html/rfc3986'
-                  target='_blank'
-                  rel='noreferrer noopener'
-                  className='text-blue-500 transition-all hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-500'
-                >
-                  RFC 3986{' '}
-                </a>
-                defines {'"reserved characters"'} as those that have special
-                meaning within the URL syntax. These characters must be encoded
-                when they appear as data within a URL component, to prevent them
-                from being misinterpreted as URL syntax.
-              </p>
-              <table className='my-4 w-full text-left text-sm text-gray-500 rtl:text-right dark:text-gray-300'>
-                <tbody>
-                  <tr className='border border-gray-200 bg-gray-100 dark:border-gray-800 dark:bg-gray-800'>
-                    <td className='border-r border-gray-300 p-2.5 dark:border-gray-700'>
-                      !
-                    </td>
-                    <td className='border-r border-gray-300 p-2.5 dark:border-gray-700'>
-                      @
-                    </td>
-                    <td className='border-r border-gray-300 p-2.5 dark:border-gray-700'>
-                      #
-                    </td>
-                    <td className='border-r border-gray-300 p-2.5 dark:border-gray-700'>
-                      $
-                    </td>
-                    <td className='border-r border-gray-300 p-2.5 dark:border-gray-700'>
-                      &amp;
-                    </td>
-                    <td className='border-r border-gray-300 p-2.5 dark:border-gray-700'>
-                      {"'"}
-                    </td>
-                    <td className='border-r border-gray-300 p-2.5 dark:border-gray-700'>
-                      (
-                    </td>
-                    <td className='border-r border-gray-300 p-2.5 dark:border-gray-700'>
-                      )
-                    </td>
-                    <td className='border-r border-gray-300 p-2.5 dark:border-gray-700'>
-                      *
-                    </td>
-                    <td className='border-r border-gray-300 p-2.5 dark:border-gray-700'>
-                      +
-                    </td>
-                    <td className='border-r border-gray-300 p-2.5 dark:border-gray-700'>
-                      ,
-                    </td>
-                    <td className='border-r border-gray-300 p-2.5 dark:border-gray-700'>
-                      /
-                    </td>
-                    <td className='border-r border-gray-300 p-2.5 dark:border-gray-700'>
-                      :
-                    </td>
-                    <td className='border-r border-gray-300 p-2.5 dark:border-gray-700'>
-                      ;
-                    </td>
-                    <td className='border-r border-gray-300 p-2.5 dark:border-gray-700'>
-                      =
-                    </td>
-                    <td className='border-r border-gray-300 p-2.5 dark:border-gray-700'>
-                      ?
-                    </td>
-                    <td className='border-r border-gray-300 p-2.5 dark:border-gray-700'>
-                      [
-                    </td>
-                    <td className='p-2.5'>]</td>
-                  </tr>
-                </tbody>
-              </table>
-            </section>
-            <section className='w-full xl:w-[50%]'>
-              <h2 className='my-4 text-xl font-semibold text-gray-600 dark:text-gray-400'>
+              <h2 className='my-4 text-lg font-semibold text-gray-600 xl:text-xl dark:text-gray-400'>
                 How URL-Encoding works?
               </h2>
-              <h3 className='my-2.5 text-lg font-semibold text-gray-600 dark:text-gray-400'>
+              <h3 className='my-2.5 text-base font-semibold text-gray-600 xl:text-lg dark:text-gray-400'>
                 ASCII Characters:
               </h3>
-              <p className='my-2 text-lg font-normal text-gray-700 dark:text-gray-300'>
+              <p className='my-2 text-base font-normal text-gray-700 xl:text-lg dark:text-gray-300'>
                 For ASCII characters (code points 0–127), URL encoding checks if
                 the character is {'"unreserved"'} (like letters, digits,{' '}
                 <InlineCodeBlock text='-' />, <InlineCodeBlock text='_' />,{' '}
@@ -136,11 +59,10 @@ export default function URLEncoderDecoder() {
                 <InlineCodeBlock text='@' /> (ASCII 64) becomes{' '}
                 <InlineCodeBlock text='%40' />.
               </p>
-
-              <h3 className='my-2.5 text-lg font-semibold text-gray-600 dark:text-gray-400'>
+              <h3 className='my-2.5 text-base font-semibold text-gray-600 xl:text-lg dark:text-gray-400'>
                 Non-ASCII Characters:
               </h3>
-              <p className='my-2 text-lg font-normal text-gray-700 dark:text-gray-300'>
+              <p className='my-2 text-base font-normal text-gray-700 xl:text-lg dark:text-gray-300'>
                 For non-ASCII characters (code points above 127), the character
                 is first encoded using UTF-8 into one or more bytes. Each byte
                 is then percent-encoded separately. For instance, the Unicode
@@ -151,6 +73,219 @@ export default function URLEncoderDecoder() {
                 safely represented in URLs using only ASCII-compatible
                 sequences.
               </p>
+            </section>
+            <section className='w-full xl:w-[50%]'>
+              <p className='my-2.5 text-base font-normal text-gray-700 xl:text-lg dark:text-gray-300'>
+                <a
+                  href='https://datatracker.ietf.org/doc/html/rfc3986'
+                  target='_blank'
+                  rel='noreferrer noopener'
+                  className='text-blue-500 transition-all hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-500'
+                >
+                  RFC 3986{' '}
+                </a>
+                defines {'"reserved characters"'} as those that have special
+                meaning within the URL syntax. These characters must be encoded
+                when they appear as data within a URL component, to prevent them
+                from being misinterpreted as URL syntax.
+              </p>
+              <table className='w-full text-base text-gray-500 xl:text-lg dark:text-gray-400'>
+                <thead className='bg-gray-300 text-xs text-gray-700 uppercase dark:bg-gray-700 dark:text-gray-400'>
+                  <tr>
+                    <th scope='col' className='px-6 py-3'>
+                      Character
+                    </th>
+                    <th scope='col' className='px-6 py-3'>
+                      Hex
+                    </th>
+                    <th scope='col' className='px-6 py-3'>
+                      URL Encoded
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className='border-b border-gray-300 bg-gray-200 dark:border-gray-700 dark:bg-gray-800'>
+                    <th
+                      scope='row'
+                      className='px-6 py-4 font-medium whitespace-nowrap text-gray-900 dark:text-gray-300'
+                    >
+                      !
+                    </th>
+                    <td className='px-6 py-4'>21</td>
+                    <td className='px-6 py-4'>%21</td>
+                  </tr>
+                  <tr className='border-b border-gray-300 bg-gray-200 dark:border-gray-700 dark:bg-gray-800'>
+                    <th
+                      scope='row'
+                      className='px-6 py-4 font-medium whitespace-nowrap text-gray-900 dark:text-gray-300'
+                    >
+                      @
+                    </th>
+                    <td className='px-6 py-4'>40</td>
+                    <td className='px-6 py-4'>%40</td>
+                  </tr>
+                  <tr className='border-b border-gray-300 bg-gray-200 dark:border-gray-700 dark:bg-gray-800'>
+                    <th
+                      scope='row'
+                      className='px-6 py-4 font-medium whitespace-nowrap text-gray-900 dark:text-gray-300'
+                    >
+                      #
+                    </th>
+                    <td className='px-6 py-4'>23</td>
+                    <td className='px-6 py-4'>%23</td>
+                  </tr>
+                  <tr className='border-b border-gray-300 bg-gray-200 dark:border-gray-700 dark:bg-gray-800'>
+                    <th
+                      scope='row'
+                      className='px-6 py-4 font-medium whitespace-nowrap text-gray-900 dark:text-gray-300'
+                    >
+                      $
+                    </th>
+                    <td className='px-6 py-4'>24</td>
+                    <td className='px-6 py-4'>%24</td>
+                  </tr>
+                  <tr className='border-b border-gray-300 bg-gray-200 dark:border-gray-700 dark:bg-gray-800'>
+                    <th
+                      scope='row'
+                      className='px-6 py-4 font-medium whitespace-nowrap text-gray-900 dark:text-gray-300'
+                    >
+                      &
+                    </th>
+                    <td className='px-6 py-4'>26</td>
+                    <td className='px-6 py-4'>%26</td>
+                  </tr>
+                  <tr className='border-b border-gray-300 bg-gray-200 dark:border-gray-700 dark:bg-gray-800'>
+                    <th
+                      scope='row'
+                      className='px-6 py-4 font-medium whitespace-nowrap text-gray-900 dark:text-gray-300'
+                    >
+                      {"'"}
+                    </th>
+                    <td className='px-6 py-4'>27</td>
+                    <td className='px-6 py-4'>%27</td>
+                  </tr>
+                  <tr className='border-b border-gray-300 bg-gray-200 dark:border-gray-700 dark:bg-gray-800'>
+                    <th
+                      scope='row'
+                      className='px-6 py-4 font-medium whitespace-nowrap text-gray-900 dark:text-gray-300'
+                    >
+                      {'('}
+                    </th>
+                    <td className='px-6 py-4'>28</td>
+                    <td className='px-6 py-4'>%28</td>
+                  </tr>
+                  <tr className='border-b border-gray-300 bg-gray-200 dark:border-gray-700 dark:bg-gray-800'>
+                    <th
+                      scope='row'
+                      className='px-6 py-4 font-medium whitespace-nowrap text-gray-900 dark:text-gray-300'
+                    >
+                      {')'}
+                    </th>
+                    <td className='px-6 py-4'>29</td>
+                    <td className='px-6 py-4'>%29</td>
+                  </tr>
+                  <tr className='border-b border-gray-300 bg-gray-200 dark:border-gray-700 dark:bg-gray-800'>
+                    <th
+                      scope='row'
+                      className='px-6 py-4 font-medium whitespace-nowrap text-gray-900 dark:text-gray-300'
+                    >
+                      {'*'}
+                    </th>
+                    <td className='px-6 py-4'>2A</td>
+                    <td className='px-6 py-4'>%2A</td>
+                  </tr>
+                  <tr className='border-b border-gray-300 bg-gray-200 dark:border-gray-700 dark:bg-gray-800'>
+                    <th
+                      scope='row'
+                      className='px-6 py-4 font-medium whitespace-nowrap text-gray-900 dark:text-gray-300'
+                    >
+                      {'+'}
+                    </th>
+                    <td className='px-6 py-4'>2B</td>
+                    <td className='px-6 py-4'>%2B</td>
+                  </tr>
+                  <tr className='border-b border-gray-300 bg-gray-200 dark:border-gray-700 dark:bg-gray-800'>
+                    <th
+                      scope='row'
+                      className='px-6 py-4 font-medium whitespace-nowrap text-gray-900 dark:text-gray-300'
+                    >
+                      {','}
+                    </th>
+                    <td className='px-6 py-4'>2C</td>
+                    <td className='px-6 py-4'>%2C</td>
+                  </tr>
+                  <tr className='border-b border-gray-300 bg-gray-200 dark:border-gray-700 dark:bg-gray-800'>
+                    <th
+                      scope='row'
+                      className='px-6 py-4 font-medium whitespace-nowrap text-gray-900 dark:text-gray-300'
+                    >
+                      {'/'}
+                    </th>
+                    <td className='px-6 py-4'>2F</td>
+                    <td className='px-6 py-4'>%2F</td>
+                  </tr>
+                  <tr className='border-b border-gray-300 bg-gray-200 dark:border-gray-700 dark:bg-gray-800'>
+                    <th
+                      scope='row'
+                      className='px-6 py-4 font-medium whitespace-nowrap text-gray-900 dark:text-gray-300'
+                    >
+                      {':'}
+                    </th>
+                    <td className='px-6 py-4'>3A</td>
+                    <td className='px-6 py-4'>%3A</td>
+                  </tr>
+                  <tr className='border-b border-gray-300 bg-gray-200 dark:border-gray-700 dark:bg-gray-800'>
+                    <th
+                      scope='row'
+                      className='px-6 py-4 font-medium whitespace-nowrap text-gray-900 dark:text-gray-300'
+                    >
+                      {';'}
+                    </th>
+                    <td className='px-6 py-4'>3B</td>
+                    <td className='px-6 py-4'>%3B</td>
+                  </tr>
+                  <tr className='border-b border-gray-300 bg-gray-200 dark:border-gray-700 dark:bg-gray-800'>
+                    <th
+                      scope='row'
+                      className='px-6 py-4 font-medium whitespace-nowrap text-gray-900 dark:text-gray-300'
+                    >
+                      {'='}
+                    </th>
+                    <td className='px-6 py-4'>3D</td>
+                    <td className='px-6 py-4'>%3D</td>
+                  </tr>
+                  <tr className='border-b border-gray-300 bg-gray-200 dark:border-gray-700 dark:bg-gray-800'>
+                    <th
+                      scope='row'
+                      className='px-6 py-4 font-medium whitespace-nowrap text-gray-900 dark:text-gray-300'
+                    >
+                      {'?'}
+                    </th>
+                    <td className='px-6 py-4'>3F</td>
+                    <td className='px-6 py-4'>%3F</td>
+                  </tr>
+                  <tr className='border-b border-gray-300 bg-gray-200 dark:border-gray-700 dark:bg-gray-800'>
+                    <th
+                      scope='row'
+                      className='px-6 py-4 font-medium whitespace-nowrap text-gray-900 dark:text-gray-200'
+                    >
+                      {'['}
+                    </th>
+                    <td className='px-6 py-4'>5B</td>
+                    <td className='px-6 py-4'>%5B</td>
+                  </tr>
+                  <tr className='bg-gray-200 dark:border-gray-700 dark:bg-gray-800'>
+                    <th
+                      scope='row'
+                      className='px-6 py-4 font-medium whitespace-nowrap text-gray-900 dark:text-gray-300'
+                    >
+                      {']'}
+                    </th>
+                    <td className='px-6 py-4'>5D</td>
+                    <td className='px-6 py-4'>%5D</td>
+                  </tr>
+                </tbody>
+              </table>
             </section>
           </section>
         </section>
