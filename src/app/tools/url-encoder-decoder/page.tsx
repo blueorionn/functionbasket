@@ -8,16 +8,16 @@ export async function generateMetadata(): Promise<Metadata> {
   if (!tool) notFound()
 
   return {
-    title: `${tool.title}`,
+    title: `${tool.title} | Function Basket`,
     description: `${tool.description}`,
     openGraph: {
-      title: `${tool.title}`,
+      title: `${tool.title} | Function Basket`,
       description: `${tool.description}`,
       images: 'https://functionbasket.com/favicon.ico',
     },
     twitter: {
       card: 'summary',
-      title: `${tool.title}`,
+      title: `${tool.title} | Function Basket`,
       description: `${tool.description}`,
       images: 'https://functionbasket.com/favicon.ico',
     },
