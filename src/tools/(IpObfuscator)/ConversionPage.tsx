@@ -31,8 +31,8 @@ export default function ConversionPage() {
   return (
     <>
       <section className='mx-auto max-w-screen-xl py-8'>
-        <div className='flex w-full items-start justify-center gap-2.5'>
-          <div className='w-full max-w-96'>
+        <div className='flex w-full items-center justify-center gap-2.5 px-4'>
+          <div className='relative w-full max-w-96'>
             <input
               type='text'
               id='ipv4'
@@ -44,14 +44,14 @@ export default function ConversionPage() {
               value={state.input}
             />
             <p
-              className={`py-2 text-sm text-red-700 dark:text-red-400 ${state.hasError ? 'visible' : 'invisible'}`}
+              className={`absolute py-2 text-sm text-red-700 dark:text-red-400 ${state.hasError ? 'visible' : 'invisible'}`}
             >
               Please enter a valid Ipv4 address
             </p>
           </div>
           <button
             type='button'
-            className='flex cursor-pointer items-center justify-center rounded bg-blue-500 p-3 text-center text-sm font-medium text-white hover:bg-blue-600 focus:ring-blue-300 focus:outline-none sm:w-auto'
+            className='flex cursor-pointer items-center justify-center rounded bg-sky-700 p-2.5 text-center text-sm font-medium text-white hover:bg-sky-600 focus:ring-blue-300 focus:outline-none sm:w-auto lg:p-3'
             onClick={() => dispatch({ type: 'Obfuscate Ip' })}
           >
             <span className='convert-button font-semibold text-gray-100'>
@@ -59,8 +59,7 @@ export default function ConversionPage() {
             </span>
           </button>
         </div>
-
-        <div className='mt-8 grid w-full grid-flow-row gap-4 px-0 md:p-4 lg:grid-cols-2 lg:gap-8 lg:p-8'>
+        <div className='mt-10 grid w-full grid-flow-row gap-4 px-4 md:p-4 lg:grid-cols-2 lg:gap-8 lg:p-8'>
           <div>
             <div className='h-max w-full'>
               <h2 className='py-0.5 text-base font-semibold text-gray-700 dark:text-gray-300'>
@@ -81,7 +80,7 @@ export default function ConversionPage() {
                   onClick={() =>
                     copyHandler('IPv6 (short)', state.ipv6Short.value)
                   }
-                  className='flex cursor-pointer items-center justify-center rounded bg-blue-500 px-2.5 py-3 text-center text-sm font-medium text-white hover:bg-blue-600 focus:ring-blue-300 focus:outline-none sm:w-auto'
+                  className='flex cursor-pointer items-center justify-center rounded bg-sky-700 px-2.5 py-3 text-center text-sm font-medium text-white hover:bg-sky-600 focus:ring-blue-300 focus:outline-none sm:w-auto'
                 >
                   <span className='sr-only'>Copy Button</span>
                   {!state.ipv6Short.copyState && <AiFillCopy />}
@@ -110,7 +109,7 @@ export default function ConversionPage() {
                   onClick={() =>
                     copyHandler('IPv6 (long)', state.ipv6Long.value)
                   }
-                  className='flex cursor-pointer items-center justify-center rounded bg-blue-500 px-2.5 py-3 text-center text-sm font-medium text-white hover:bg-blue-600 focus:ring-blue-300 focus:outline-none sm:w-auto'
+                  className='flex cursor-pointer items-center justify-center rounded bg-sky-700 px-2.5 py-3 text-center text-sm font-medium text-white hover:bg-sky-600 focus:ring-blue-300 focus:outline-none sm:w-auto'
                 >
                   <span className='sr-only'>Copy Button</span>
                   {!state.ipv6Long.copyState && <AiFillCopy />}
@@ -137,7 +136,7 @@ export default function ConversionPage() {
                   type='button'
                   title='copy'
                   onClick={() => copyHandler('Integer', state.ipInt.value)}
-                  className='flex cursor-pointer items-center justify-center rounded bg-blue-500 px-2.5 py-3 text-center text-sm font-medium text-white hover:bg-blue-600 focus:ring-blue-300 focus:outline-none sm:w-auto'
+                  className='flex cursor-pointer items-center justify-center rounded bg-sky-700 px-2.5 py-3 text-center text-sm font-medium text-white hover:bg-sky-600 focus:ring-blue-300 focus:outline-none sm:w-auto'
                 >
                   <span className='sr-only'>Copy Button</span>
                   {!state.ipInt.copyState && <AiFillCopy />}
@@ -164,7 +163,7 @@ export default function ConversionPage() {
                   type='button'
                   title='copy'
                   onClick={() => copyHandler('Hex', state.ipHex.value)}
-                  className='flex cursor-pointer items-center justify-center rounded bg-blue-500 px-2.5 py-3 text-center text-sm font-medium text-white hover:bg-blue-600 focus:ring-blue-300 focus:outline-none sm:w-auto'
+                  className='flex cursor-pointer items-center justify-center rounded bg-sky-700 px-2.5 py-3 text-center text-sm font-medium text-white hover:bg-sky-600 focus:ring-blue-300 focus:outline-none sm:w-auto'
                 >
                   <span className='sr-only'>Copy Button</span>
                   {!state.ipHex.copyState && <AiFillCopy />}
@@ -191,7 +190,7 @@ export default function ConversionPage() {
                   type='button'
                   title='copy'
                   onClick={() => copyHandler('Octal', state.ipOct.value)}
-                  className='flex cursor-pointer items-center justify-center rounded bg-blue-500 px-2.5 py-3 text-center text-sm font-medium text-white hover:bg-blue-600 focus:ring-blue-300 focus:outline-none sm:w-auto'
+                  className='flex cursor-pointer items-center justify-center rounded bg-sky-700 px-2.5 py-3 text-center text-sm font-medium text-white hover:bg-sky-600 focus:ring-blue-300 focus:outline-none sm:w-auto'
                 >
                   <span className='sr-only'>Copy Button</span>
                   {!state.ipOct.copyState && <AiFillCopy />}
@@ -218,7 +217,7 @@ export default function ConversionPage() {
                   type='button'
                   title='copy'
                   onClick={() => copyHandler('Binary', state.ipBin.value)}
-                  className='flex cursor-pointer items-center justify-center rounded bg-blue-500 px-2.5 py-3 text-center text-sm font-medium text-white hover:bg-blue-600 focus:ring-blue-300 focus:outline-none sm:w-auto'
+                  className='flex cursor-pointer items-center justify-center rounded bg-sky-700 px-2.5 py-3 text-center text-sm font-medium text-white hover:bg-sky-600 focus:ring-blue-300 focus:outline-none sm:w-auto'
                 >
                   <span className='sr-only'>Copy Button</span>
                   {!state.ipBin.copyState && <AiFillCopy />}
@@ -247,7 +246,7 @@ export default function ConversionPage() {
                   onClick={() =>
                     copyHandler('Dotted Binary', state.ipDotBin.value)
                   }
-                  className='flex cursor-pointer items-center justify-center rounded bg-blue-500 px-2.5 py-3 text-center text-sm font-medium text-white hover:bg-blue-600 focus:ring-blue-300 focus:outline-none sm:w-auto'
+                  className='flex cursor-pointer items-center justify-center rounded bg-sky-700 px-2.5 py-3 text-center text-sm font-medium text-white hover:bg-sky-600 focus:ring-blue-300 focus:outline-none sm:w-auto'
                 >
                   <span className='sr-only'>Copy Button</span>
                   {!state.ipDotBin.copyState && <AiFillCopy />}
