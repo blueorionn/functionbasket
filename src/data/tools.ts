@@ -52,23 +52,17 @@ export const toolsCollection = [
     tools: [
       {
         id: 1,
+        title: 'Decimal to Binary Converter',
+        description:
+          'Convert a decimal number into its binary representation. It takes a decimal input and returns a string that represents the corresponding binary value.',
+        location: '/tools/decimal-to-binary',
+      },
+      {
+        id: 2,
         title: 'Decimal to Octal Converter',
         description:
           'Convert a decimal number into its octal representation. It takes a decimal input and returns a string that represents the corresponding octal value, using either built-in conversion methods.',
         location: '/tools/decimal-to-octal',
-      },
-    ],
-  },
-  {
-    collectionCategory: 'Miscellaneous Converter',
-    collectionId: 'miscellaneous-converter',
-    tools: [
-      {
-        id: 1,
-        title: 'ASCII to Decimal Converter',
-        description:
-          "This tool takes an ASCII character as input and converts it to the decimal value by the character's Unicode code point using a built-in conversion method.",
-        location: '/tools/ascii-to-decimal-converter',
       },
     ],
   },

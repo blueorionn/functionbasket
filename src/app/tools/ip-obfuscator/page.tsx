@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { getToolForPage } from '@/shared/getToolForPage'
-import IpObfuscator from '@/tools/(IpObfuscator)/IpObfuscator'
+import IpObfuscator from '@/tools/IpObfuscator/IpObfuscator'
 
 export async function generateMetadata(): Promise<Metadata> {
   const tool = getToolForPage('/tools/ip-obfuscator')

@@ -195,8 +195,8 @@ const isIPv4AddressValid = (ip: string) => {
   // Each octet should be in range 0-255
   for (let index = 0; index < ip.split('.').length; index++) {
     const octet = ip.split('.')[index]
-    if (isNaN(parseInt(octet))) return false
-    if (parseInt(octet) > 255 || parseInt(octet) < 0) return false
+    if (Number.isNaN(Number.parseInt(octet))) return false
+    if (Number.parseInt(octet) > 255 || Number.parseInt(octet) < 0) return false
   }
 
   return true
@@ -207,7 +207,7 @@ const convertToIPv6 = (ip: string) => {
 
   const hex_octets = octets.reduce(
     (previousValue: string, currentValue: string, currentIndex: number) => {
-      const ox = parseInt(currentValue)
+      const ox = Number.parseInt(currentValue)
 
       if (currentIndex === 0) return `${zeroPad(ox.toString(16))}`.toUpperCase()
       return `${previousValue}.${zeroPad(ox.toString(16)).toUpperCase()}`
@@ -223,9 +223,9 @@ const convertToInt = (ip: string) => {
   const octets = ip.split('.').reverse()
   const ip_int = octets.reduce(
     (previousValue: string, currentValue: string, currentIndex: number) => {
-      const ox = parseInt(currentValue) * 256 ** currentIndex
-      if (isNaN(parseInt(previousValue))) return `${ox}`
-      return `${parseInt(previousValue) + ox}`
+      const ox = Number.parseInt(currentValue) * 256 ** currentIndex
+      if (Number.isNaN(Number.parseInt(previousValue))) return `${ox}`
+      return `${Number.parseInt(previousValue) + ox}`
     },
     ''
   )
@@ -238,7 +238,7 @@ const convertToHex = (ip: string) => {
 
   const ip_hex = octets.reduce(
     (previousValue: string, currentValue: string, currentIndex: number) => {
-      const ox = parseInt(currentValue)
+      const ox = Number.parseInt(currentValue)
 
       if (currentIndex === 0) return `${zeroPad(ox.toString(16))}`.toUpperCase()
       return `${previousValue}.${zeroPad(ox.toString(16)).toUpperCase()}`
@@ -254,7 +254,7 @@ const convertToOct = (ip: string) => {
 
   const ip_oct = octets.reduce(
     (previousValue: string, currentValue: string, currentIndex: number) => {
-      const ox = parseInt(currentValue)
+      const ox = Number.parseInt(currentValue)
 
       if (currentIndex === 0)
         return `${zeroPad(ox.toString(8), 4)}`.toUpperCase()
@@ -271,7 +271,7 @@ const convertToBin = (ip: string) => {
 
   const ip_bin = octets.reduce(
     (previousValue: string, currentValue: string, currentIndex: number) => {
-      const ox = parseInt(currentValue)
+      const ox = Number.parseInt(currentValue)
 
       if (currentIndex === 0) return `${zeroPad(ox.toString(2), 8)}`
       return `${previousValue}${zeroPad(ox.toString(2), 8)}`
@@ -287,7 +287,7 @@ const convertToDottedBin = (ip: string) => {
 
   const ip_dot_bin = octets.reduce(
     (previousValue: string, currentValue: string, currentIndex: number) => {
-      const ox = parseInt(currentValue)
+      const ox = Number.parseInt(currentValue)
 
       if (currentIndex === 0) return `${zeroPad(ox.toString(2), 8)}`
       return `${previousValue}.${zeroPad(ox.toString(2), 8)}`

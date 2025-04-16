@@ -1,9 +1,24 @@
 'use client'
-import { useEffect, useState } from 'react'
+import { useCallback, useState } from 'react'
 import { AiFillCopy } from 'react-icons/ai'
 import { AiFillDelete } from 'react-icons/ai'
 import { AiOutlineCheck } from 'react-icons/ai'
 import { useCopyToClipboard } from '@/hooks/useCopyToClipboard'
+
+const encodeURL = (text: string) => {
+  return encodeURIComponent(text).replace(
+    /[!@#$&'()*+,/:;=?]/gi,
+    (c) => `% + ${c.charCodeAt(0).toString(16)}`
+  )
+}
+
+const decodeURL = (text: string) => {
+  try {
+    return decodeURIComponent(text)
+  } catch {
+    return text
+  }
+}
 
 export default function EncoderDecoder() {
   const [input, setInput] = useState('')
@@ -17,24 +32,9 @@ export default function EncoderDecoder() {
     if (option === 'decode') setOption('encode')
   }
 
-  const encodeURI = (text: string) => {
-    return encodeURIComponent(text).replace(
-      /[!@#$&'()*+,/:;=?]/gi,
-      (c) => '%' + c.charCodeAt(0).toString(16)
-    )
-  }
-
-  const decodeURI = (text: string) => {
-    try {
-      return decodeURIComponent(text)
-    } catch {
-      return text
-    }
-  }
-
-  useEffect(() => {
-    if (option === 'encode') setOutput(encodeURI(input))
-    if (option === 'decode') setOutput(decodeURI(input))
+  useCallback(() => {
+    if (option === 'encode') setOutput(encodeURL(input))
+    if (option === 'decode') setOutput(decodeURL(input))
   }, [input, option])
 
   const copyOutput = () => {
@@ -71,7 +71,7 @@ export default function EncoderDecoder() {
             placeholder='URL or Text'
             value={input}
             onChange={(e) => setInput(e.currentTarget.value)}
-          ></textarea>
+          />
         </div>
         <div className='my-4 h-full w-full'>
           <div className='flex w-full items-center justify-start gap-4 py-4'>
@@ -103,7 +103,7 @@ export default function EncoderDecoder() {
             placeholder='Output'
             value={output}
             disabled
-          ></textarea>
+          />
         </div>
       </section>
     </>
