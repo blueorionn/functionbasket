@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react'
 import { AiFillCopy } from 'react-icons/ai'
 import { AiFillDelete } from 'react-icons/ai'
 import { AiOutlineCheck } from 'react-icons/ai'
+import { Textarea } from '@/components/ui/textarea'
+import { Button } from '@/components/ui/button'
 import { useCopyToClipboard } from '@/hooks/useCopyToClipboard'
 
 const encodeURL = (text: string) => {
@@ -50,10 +52,10 @@ export default function EncoderDecoderLogic() {
     <>
       <section className='mx-auto w-full max-w-4xl p-4 xl:flex xl:max-w-6xl xl:items-center xl:justify-between xl:gap-16'>
         <div className='my-4 h-full w-full'>
-          <div className='flex w-full items-center justify-start gap-4 py-4'>
-            <h2 className='cursor-default text-lg font-semibold text-gray-700 xl:text-xl dark:text-gray-300'>
-              Input
-            </h2>
+          <h2 className='cursor-default text-lg font-semibold text-gray-700 xl:text-xl dark:text-gray-300'>
+            Input
+          </h2>
+          <div className='my-2.5 flex w-full items-center justify-end'>
             <select
               name='operation'
               id='operation'
@@ -64,45 +66,45 @@ export default function EncoderDecoderLogic() {
               <option value='decode'>Decode</option>
             </select>
           </div>
-          <textarea
+          <Textarea
             name='url-input'
             id='url-input'
-            className='block h-32 w-full max-w-2xl resize-none rounded border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 xl:h-64 dark:border-gray-700 dark:bg-gray-950 dark:text-gray-100 dark:focus:border-blue-600 dark:focus:ring-blue-600'
+            className='block h-32 w-full max-w-2xl resize-none rounded text-base text-gray-800 xl:h-64 dark:text-gray-200'
             placeholder='URL or Text'
             value={input}
             onChange={(e) => setInput(e.currentTarget.value)}
           />
         </div>
         <div className='my-4 h-full w-full'>
-          <div className='flex w-full items-center justify-start gap-4 py-4'>
-            <h2 className='cursor-default text-lg font-semibold text-gray-700 xl:text-xl dark:text-gray-300'>
-              Output
-            </h2>
-            <button
+          <h2 className='cursor-default text-lg font-semibold text-gray-700 xl:text-xl dark:text-gray-300'>
+            Output
+          </h2>
+          <div className='my-2.5 flex w-full items-center justify-end gap-4'>
+            <Button
               type='button'
               onClick={copyOutput}
-              className='flex cursor-pointer items-center justify-center rounded bg-blue-500 px-2.5 py-2.5 text-center text-sm font-medium text-white transition duration-100 hover:bg-blue-600 focus:ring-blue-300 focus:outline-none sm:w-auto'
+              className='cursor-pointer rounded-sm p-2'
             >
               <span className='sr-only'>Copy</span>
               {copyState ? <AiOutlineCheck /> : <AiFillCopy />}
-            </button>
-            <button
+            </Button>
+            <Button
               type='button'
               onClick={deleteOutput}
-              className='flex cursor-pointer items-center justify-center rounded bg-blue-500 px-2.5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-600 focus:ring-blue-300 focus:outline-none sm:w-auto'
+              className='cursor-pointer rounded-sm p-2'
             >
               <span className='sr-only'>Delete</span>
               <AiFillDelete />
-            </button>
+            </Button>
           </div>
-          <textarea
+          <Textarea
             name='output'
             id='output'
-            className='block h-32 w-full max-w-2xl resize-none rounded border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 xl:h-64 dark:border-gray-700 dark:bg-gray-950 dark:text-gray-100 dark:focus:border-blue-600 dark:focus:ring-blue-600'
+            className='block h-32 w-full max-w-2xl resize-none rounded text-base text-gray-800 xl:h-64 dark:text-gray-200'
             rows={5}
             placeholder='Output'
             value={output}
-            disabled
+            spellCheck={false}
           />
         </div>
       </section>
