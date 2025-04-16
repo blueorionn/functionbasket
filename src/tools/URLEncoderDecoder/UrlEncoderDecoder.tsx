@@ -9,7 +9,7 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table'
-import EncoderDecoder from './EncoderDecoder'
+import EncoderDecoderLogic from './EncoderDecoderLogic'
 
 export default function URLEncoderDecoder() {
   return (
@@ -28,7 +28,7 @@ export default function URLEncoderDecoder() {
               their percent-encoded equivalents.
             </p>
           </section>
-          <EncoderDecoder />
+          <EncoderDecoderLogic />
           <section className='flex w-full flex-col items-start justify-between gap-4 p-4 py-8 lg:gap-16 xl:flex-row xl:gap-8 xl:py-8'>
             <section className='w-full xl:w-[50%]'>
               <h2 className='my-4 text-xl font-semibold text-gray-600 dark:text-gray-400'>

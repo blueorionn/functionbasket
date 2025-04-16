@@ -1,5 +1,5 @@
 'use client'
-import { useCallback, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { AiFillCopy } from 'react-icons/ai'
 import { AiFillDelete } from 'react-icons/ai'
 import { AiOutlineCheck } from 'react-icons/ai'
@@ -20,7 +20,7 @@ const decodeURL = (text: string) => {
   }
 }
 
-export default function EncoderDecoder() {
+export default function EncoderDecoderLogic() {
   const [input, setInput] = useState('')
   const [output, setOutput] = useState('')
   const [option, setOption] = useState<'encode' | 'decode'>('encode')
@@ -32,7 +32,7 @@ export default function EncoderDecoder() {
     if (option === 'decode') setOption('encode')
   }
 
-  useCallback(() => {
+  useEffect(() => {
     if (option === 'encode') setOutput(encodeURL(input))
     if (option === 'decode') setOutput(decodeURL(input))
   }, [input, option])
