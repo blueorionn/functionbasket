@@ -105,6 +105,7 @@ export default function EncoderDecoderLogic() {
             placeholder='Output'
             value={output}
             spellCheck={false}
+            readOnly
           />
         </div>
       </section>
