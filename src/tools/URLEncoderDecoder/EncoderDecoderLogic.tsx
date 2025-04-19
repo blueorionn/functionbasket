@@ -10,7 +10,7 @@ import { useCopyToClipboard } from '@/hooks/useCopyToClipboard'
 const encodeURL = (text: string) => {
   return encodeURIComponent(text).replace(
     /[!@#$&'()*+,/:;=?]/gi,
-    (c) => `% + ${c.charCodeAt(0).toString(16)}`
+    (c) => `%${c.charCodeAt(0).toString(16)}`
   )
 }
 
