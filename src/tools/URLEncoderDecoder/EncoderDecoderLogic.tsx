@@ -69,7 +69,7 @@ export default function EncoderDecoderLogic() {
           <Textarea
             name='url-input'
             id='url-input'
-            className='block h-32 w-full max-w-2xl resize-none rounded text-base text-gray-800 xl:h-64 dark:text-gray-200'
+            className='block h-32 w-xl resize-none rounded text-base text-gray-800 xl:h-64 dark:text-gray-200'
             placeholder='URL or Text'
             value={input}
             onChange={(e) => setInput(e.currentTarget.value)}
@@ -100,7 +100,7 @@ export default function EncoderDecoderLogic() {
           <Textarea
             name='output'
             id='output'
-            className='block h-32 w-full max-w-2xl resize-none rounded text-base text-gray-800 xl:h-64 dark:text-gray-200'
+            className='block h-32 w-xl resize-none rounded text-base text-gray-800 xl:h-64 dark:text-gray-200'
             rows={5}
             placeholder='Output'
             value={output}
